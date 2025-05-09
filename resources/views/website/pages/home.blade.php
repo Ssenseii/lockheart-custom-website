@@ -361,6 +361,94 @@
                     </div>
                 </div>
             @endif
+
+            @if ($testimonials->count() > 0)
+                <!-- Header -->
+                <div class="text-center mb-12">
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Testimonials</h1>
+                </div>
+                
+                <!-- Testimonials Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    @foreach ($testimonials as $testimonial)
+                        <div
+                            class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                            <div class="p-6">
+                                <!-- Rating -->
+                                @if ($testimonial->rating)
+                                    <div class="flex mb-4 text-yellow-400">
+                                        @for ($i = 0; $i < $testimonial->rating; $i++)
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                                                fill="currentColor">
+                                                <path
+                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                            </svg>
+                                        @endfor
+                                    </div>
+                                @endif
+
+                                <!-- Testimonial Content -->
+                                <p class="text-gray-600 mb-6 italic">"{{ $testimonial->content }}"</p>
+
+                                <!-- Client Info -->
+                                <div class="flex items-center">
+                                    @if ($testimonial->avatar)
+                                        <img class="w-12 h-12 rounded-full mr-4 object-cover"
+                                            src="{{ asset('storage/' . $testimonial->avatar) }}"
+                                            alt="{{ $testimonial->client_name }}">
+                                    @else
+                                        <div
+                                            class="w-12 h-12 rounded-full mr-4 bg-gray-200 flex items-center justify-center">
+                                            <i class="fas fa-user text-gray-500"></i>
+                                        </div>
+                                    @endif
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800">{{ $testimonial->client_name }}</h4>
+                                        @if ($testimonial->client_title || $testimonial->client_company)
+                                            <p class="text-sm text-gray-600">
+                                                {{ $testimonial->client_title }}
+                                                @if ($testimonial->client_title && $testimonial->client_company)
+                                                    ,
+                                                @endif
+                                                {{ $testimonial->client_company }}
+                                            </p>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <!-- Featured Badge -->
+                                @if ($testimonial->is_featured)
+                                    <div class="mt-4">
+                                        <span
+                                            class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800">
+                                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z">
+                                                </path>
+                                            </svg>
+                                            Featured
+                                        </span>
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+
+                <!-- Empty State (hidden) -->
+            @else
+                <div class="text-center py-16">
+                    <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z">
+                        </path>
+                    </svg>
+                    <h3 class="mt-2 text-lg font-medium text-gray-900">No testimonials yet</h3>
+                    <p class="mt-1 text-gray-500">Check back later for customer feedback.</p>
+                </div>
+            @endif
         </div>
     </div>
 @endsection
