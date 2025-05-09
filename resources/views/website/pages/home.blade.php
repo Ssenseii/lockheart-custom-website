@@ -315,8 +315,7 @@
                                 <div class="flex items-center justify-between mt-4 text-sm text-gray-500">
                                     <span>{{ $blog->created_at->format('M d, Y') }}</span>
                                     {{-- <a href="{{ route('blogs.show', $blog->slug) }}" --}}
-                                    <a href="#"
-                                        class="font-medium text-blue-600 hover:text-blue-800">
+                                    <a href="#" class="font-medium text-blue-600 hover:text-blue-800">
                                         Read more →
                                     </a>
                                 </div>
@@ -327,6 +326,39 @@
             @else
                 <div class="p-8 text-center bg-gray-100 rounded-lg">
                     <p class="text-gray-600">No blogs found.</p>
+                </div>
+            @endif
+
+            @if ($references->count())
+                <div class="container mx-auto px-4 py-12">
+                    <h2 class="text-3xl font-bold text-center mb-12">Our References</h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        @foreach ($references as $reference)
+                            <div
+                                class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                                @if ($reference->company_logo)
+                                    <div class="p-6 flex justify-center bg-gray-50">
+                                        <img src="{{ asset('storage/' . $reference->company_logo) }}"
+                                            alt="{{ $reference->company_name }} logo" class="h-20 object-contain">
+                                    </div>
+                                @endif
+
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold mb-2">{{ $reference->company_name }}</h3>
+                                    <h4 class="text-lg text-gray-600 mb-4">{{ $reference->title }}</h4>
+                                    <p class="text-gray-700 mb-4">{{ Str::limit($reference->description, 150) }}</p>
+
+                                    @if ($reference->is_published)
+                                        <span
+                                            class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
+                                            Verified Reference
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             @endif
         </div>

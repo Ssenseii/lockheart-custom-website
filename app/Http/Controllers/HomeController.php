@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use App\Models\Product;
+use App\Models\Reference;
 use App\Models\Service;
 
 class HomeController extends Controller
@@ -14,6 +15,7 @@ class HomeController extends Controller
         $services = Service::latest()->take(6)->get(); // Example: get latest 6 services
         $products = Product::latest()->take(6)->get(); // Example: get latest 6 products
         $blogs = Blog::latest()->take(6)->get(); // Example: get latest 6 blogs
-        return view('website.pages.home', compact(['services', 'products', 'blogs']));
+        $references = Reference::latest()->take(6)->get(); // Example: get latest 6 references
+        return view('website.pages.home', compact(['services', 'products', 'blogs', 'references']));
     }
 }
