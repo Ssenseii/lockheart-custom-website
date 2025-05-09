@@ -21,7 +21,7 @@ class FAQResource extends Resource
 
     protected static ?string $navigationLabel = 'FAQ';
 
-    protected static ?int $navigationSort = 7;
+    protected static ?int $navigationSort = 9;
 
     public static function form(Form $form): Form
     {
