@@ -22,6 +22,8 @@ class ReferenceResource extends Resource
 
     protected static ?string $navigationLabel = 'References';
 
+    protected static ?int $navigationSort = 6;
+
     public static function form(Form $form): Form
     {
         return $form

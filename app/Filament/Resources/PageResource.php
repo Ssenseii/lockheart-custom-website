@@ -2,57 +2,37 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\BlogResource\Pages;
-use App\Filament\Resources\BlogResource\RelationManagers;
-use App\Models\Blog;
+use App\Filament\Resources\PageResource\Pages;
+use App\Filament\Resources\PageResource\RelationManagers;
+use App\Models\Page;
 use Filament\Forms;
-use Filament\Forms\Components\RichEditor;
-use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Illuminate\Support\Str;
 
-class BlogResource extends Resource
+class PageResource extends Resource
 {
-    protected static ?string $model = Blog::class;
+    protected static ?string $model = Page::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-newspaper';
+    protected static ?string $navigationIcon = 'heroicon-o-globe-alt';
 
-    protected static ?int $navigationSort = 4;
+    protected static ?int $navigationSort = 1;
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\TextInput::make('title')
-                    ->required()
-                    ->live(onBlur: true) // Updates on blur
-                    ->afterStateUpdated(function ($state, callable $set) {
-                        $set('slug', Str::slug($state));
-                    }),
-                Forms\Components\TextInput::make('slug')
-                    ->required()
-                    ->unique(Blog::class, 'slug', ignoreRecord: true)
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('industry_sector')
                     ->required(),
-                Forms\Components\Textarea::make('excerpt')
-                    ->columnSpanFull(),
-                Forms\Components\FileUpload::make('featured_image')
-                    ->image(),
-                RichEditor::make('content')
-                    ->nullable()
-                    ->columnSpanFull(),
+                Forms\Components\TextInput::make('slug')
+                    ->required(),
                 Forms\Components\Toggle::make('is_published')
                     ->required(),
-                Forms\Components\TextInput::make('seo_title'),
-                Forms\Components\Textarea::make('seo_description')
-                    ->columnSpanFull(),
-                TagsInput::make('tags')
+                Forms\Components\TextInput::make('meta_title'),
+                Forms\Components\Textarea::make('meta_description')
                     ->columnSpanFull(),
             ]);
     }
@@ -65,12 +45,9 @@ class BlogResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('slug')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('industry_sector')
-                    ->searchable(),
-                Tables\Columns\ImageColumn::make('featured_image'),
                 Tables\Columns\IconColumn::make('is_published')
                     ->boolean(),
-                Tables\Columns\TextColumn::make('seo_title')
+                Tables\Columns\TextColumn::make('meta_title')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
@@ -104,9 +81,9 @@ class BlogResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListBlogs::route('/'),
-            'create' => Pages\CreateBlog::route('/create'),
-            'edit' => Pages\EditBlog::route('/{record}/edit'),
+            'index' => Pages\ListPages::route('/'),
+            'create' => Pages\CreatePage::route('/create'),
+            'edit' => Pages\EditPage::route('/{record}/edit'),
         ];
     }
 }
