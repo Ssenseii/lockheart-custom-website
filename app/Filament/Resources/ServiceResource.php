@@ -3,25 +3,23 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ServiceResource\Pages;
-use App\Filament\Resources\ServiceResource\RelationManagers;
 use App\Models\Service;
-use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Filament\Forms\Components\{TextInput, Textarea, Select, RichEditor, Repeater, FileUpload, Grid, Tabs, TagsInput, Toggle, UrlInput};
 use Filament\Tables\Columns\{TextColumn, BadgeColumn};
-use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\SelectFilter;
-use Filament\Tables\Filters\TernaryFilter;
+use Illuminate\Support\Str;
+
 
 class ServiceResource extends Resource
 {
     protected static ?string $model = Service::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-wrench-screwdriver';
-    
+
     public static function form(Form $form): Form
     {
         return $form
@@ -29,13 +27,16 @@ class ServiceResource extends Resource
                 Tabs::make('Service Details')
                     ->tabs([
                         Tabs\Tab::make('Basic Info')->schema([
-                            TextInput::make('title')
-                                ->required() // Keep title required
+                            TextInput::make('slug')
+                                ->required()
                                 ->maxLength(255)
+                                ->live(onBlur: true)
+                                ->afterStateUpdated(fn($state, callable $set) => $set('slug', Str::slug($state)))
                                 ->columnSpanFull(),
                             TextInput::make('slug')
-                                ->required() // Keep slug required
+                                ->required()
                                 ->unique(Service::class, 'slug', ignoreRecord: true)
+                                ->maxLength(255)
                                 ->columnSpanFull(),
                             TextInput::make('category')
                                 ->nullable()

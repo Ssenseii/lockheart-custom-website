@@ -263,6 +263,72 @@
                     <p class="mt-2 text-gray-500">Check back later for new products</p>
                 </div>
             @endif
+
+            @if ($blogs->count())
+                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    @foreach ($blogs as $blog)
+                        <div
+                            class="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 bg-white">
+                            @if ($blog->featured_image)
+                                <img src="{{ asset($blog->featured_image) }}" alt="{{ $blog->title }}"
+                                    class="w-full h-48 object-cover">
+                            @endif
+                            <div class="p-6">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="px-3 py-1 text-xs font-semibold text-blue-800 bg-blue-100 rounded-full">
+                                        {{ $blog->industry_sector }}
+                                    </span>
+                                    @if ($blog->is_published)
+                                        <span
+                                            class="px-3 py-1 text-xs font-semibold text-green-800 bg-green-100 rounded-full">
+                                            Published
+                                        </span>
+                                    @else
+                                        <span
+                                            class="px-3 py-1 text-xs font-semibold text-gray-800 bg-gray-100 rounded-full">
+                                            Draft
+                                        </span>
+                                    @endif
+                                </div>
+
+                                <h3 class="mb-2 text-xl font-bold text-gray-900">
+                                    {{-- <a href="{{ route('blogs.show', $blog->slug) }}" class="hover:text-blue-600"> --}}
+                                    <a href="#" class="hover:text-blue-600">
+                                        {{ $blog->title }}
+                                    </a>
+                                </h3>
+
+                                @if ($blog->excerpt)
+                                    <p class="mb-4 text-gray-600">{{ $blog->excerpt }}</p>
+                                @endif
+
+                                @if ($blog->tags)
+                                    <div class="flex flex-wrap gap-2 mt-4">
+                                        @foreach (json_decode($blog->tags) as $tag)
+                                            <span class="px-2 py-1 text-xs text-gray-600 bg-gray-100 rounded">
+                                                {{ $tag }}
+                                            </span>
+                                        @endforeach
+                                    </div>
+                                @endif
+
+                                <div class="flex items-center justify-between mt-4 text-sm text-gray-500">
+                                    <span>{{ $blog->created_at->format('M d, Y') }}</span>
+                                    {{-- <a href="{{ route('blogs.show', $blog->slug) }}" --}}
+                                    <a href="#"
+                                        class="font-medium text-blue-600 hover:text-blue-800">
+                                        Read more →
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            @else
+                <div class="p-8 text-center bg-gray-100 rounded-lg">
+                    <p class="text-gray-600">No blogs found.</p>
+                </div>
+            @endif
         </div>
     </div>
 @endsection

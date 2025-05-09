@@ -2,17 +2,21 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ProductResource\Pages;
-use App\Filament\Resources\ProductResource\RelationManagers;
+use App\Filament\Resources\ProductResource\Pages\CreateProduct;
+use App\Filament\Resources\ProductResource\Pages\EditProduct;
+use App\Filament\Resources\ProductResource\Pages\ListProducts;
+use App\Filament\Resources\ServiceResource\Pages;
 use App\Models\Product;
-use Filament\Forms;
+use App\Models\Service;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
+use Filament\Forms\Components\{Fieldset, TextInput, Textarea, Select, RichEditor, Repeater, FileUpload, Grid, KeyValue, Section, Tabs, TagsInput, Toggle, UrlInput};
+use Filament\Tables\Columns\{TextColumn, BadgeColumn};
+use Filament\Tables\Filters\SelectFilter;
 use Illuminate\Support\Str;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+
 
 class ProductResource extends Resource
 {
@@ -24,45 +28,45 @@ class ProductResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Tabs::make('Product Details')
+                Tabs::make('Product Details')
                     ->tabs([
-                        Forms\Components\Tabs\Tab::make('Basic Info')->schema([
-                            Forms\Components\TextInput::make('name')
+                        Tabs\Tab::make('Basic Info')->schema([
+                            TextInput::make('name')
                                 ->required()
                                 ->maxLength(255)
                                 ->live(onBlur: true)
                                 ->afterStateUpdated(fn($state, callable $set) => $set('slug', Str::slug($state)))
                                 ->columnSpanFull(),
-                            Forms\Components\TextInput::make('slug')
+                            TextInput::make('slug')
                                 ->required()
                                 ->unique(Product::class, 'slug', ignoreRecord: true)
                                 ->maxLength(255)
                                 ->columnSpanFull(),
-                            Forms\Components\TextInput::make('sku')
+                            TextInput::make('sku')
                                 ->label('SKU')
                                 ->unique(Product::class, 'sku', ignoreRecord: true)
                                 ->maxLength(255)
                                 ->columnSpanFull(),
-                            Forms\Components\TextInput::make('brand')
+                            TextInput::make('brand')
                                 ->maxLength(255)
                                 ->columnSpanFull(),
-                            Forms\Components\TextInput::make('category')
+                            TextInput::make('category')
                                 ->maxLength(255)
                                 ->columnSpanFull(),
-                            Forms\Components\Textarea::make('short_description')
+                            Textarea::make('short_description')
                                 ->rows(2)
                                 ->columnSpanFull(),
-                            Forms\Components\RichEditor::make('description')
+                            RichEditor::make('description')
                                 ->columnSpanFull(),
                         ])->columns(1),
 
-                        Forms\Components\Tabs\Tab::make('Specifications')->schema([
-                            Forms\Components\Repeater::make('specifications')
+                        Tabs\Tab::make('Specifications')->schema([
+                            Repeater::make('specifications')
                                 ->schema([
-                                    Forms\Components\TextInput::make('key')
+                                    TextInput::make('key')
                                         ->label('Spec Name')
                                         ->requiredWith('value'),
-                                    Forms\Components\TextInput::make('value')
+                                    TextInput::make('value')
                                         ->label('Spec Value'),
                                 ])
                                 ->defaultItems(1)
@@ -70,9 +74,9 @@ class ProductResource extends Resource
                                 ->reorderable()
                                 ->collapsible(),
 
-                            Forms\Components\Repeater::make('features')
+                            Repeater::make('features')
                                 ->schema([
-                                    Forms\Components\TextInput::make('value')
+                                    TextInput::make('value')
                                         ->label('Feature')
                                         ->columnSpanFull(),
                                 ])
@@ -82,38 +86,38 @@ class ProductResource extends Resource
                                 ->collapsible(),
                         ])->columns(1),
 
-                        Forms\Components\Tabs\Tab::make('Pricing & Inventory')->schema([
-                            Forms\Components\TextInput::make('price')
+                        Tabs\Tab::make('Pricing & Inventory')->schema([
+                            TextInput::make('price')
                                 ->required()
                                 ->numeric()
                                 ->prefix('$'),
-                            Forms\Components\TextInput::make('sale_price')
+                            TextInput::make('sale_price')
                                 ->numeric()
                                 ->prefix('$'),
-                            Forms\Components\TextInput::make('stock_quantity')
+                            TextInput::make('stock_quantity')
                                 ->required()
                                 ->numeric()
                                 ->default(0),
-                            Forms\Components\TextInput::make('weight')
+                            TextInput::make('weight')
                                 ->numeric()
                                 ->suffix('grams'),
-                            Forms\Components\TextInput::make('rating')
+                            TextInput::make('rating')
                                 ->numeric()
                                 ->minValue(0)
                                 ->maxValue(5)
                                 ->step(0.1),
                         ])->columns(2),
 
-                        Forms\Components\Tabs\Tab::make('Attributes')->schema([
-                            Forms\Components\TextInput::make('material')
+                        Tabs\Tab::make('Attributes')->schema([
+                            TextInput::make('material')
                                 ->maxLength(255),
-                            Forms\Components\TextInput::make('color')
+                            TextInput::make('color')
                                 ->maxLength(255),
-                            Forms\Components\Repeater::make('size_options')
+                            Repeater::make('size_options')
                                 ->schema([
-                                    Forms\Components\TextInput::make('size')
+                                    TextInput::make('size')
                                         ->requiredWith('price_adjustment'),
-                                    Forms\Components\TextInput::make('price_adjustment')
+                                    TextInput::make('price_adjustment')
                                         ->numeric()
                                         ->prefix('$'),
                                 ])
@@ -121,42 +125,42 @@ class ProductResource extends Resource
                                 ->columnSpanFull()
                                 ->reorderable()
                                 ->collapsible(),
-                            Forms\Components\TextInput::make('warranty')
+                            TextInput::make('warranty')
                                 ->maxLength(255),
-                            Forms\Components\Fieldset::make('Dimensions (cm)')
+                            Fieldset::make('Dimensions (cm)')
                                 ->schema([
-                                    Forms\Components\TextInput::make('dimensions.length')
+                                    TextInput::make('dimensions.length')
                                         ->numeric()
                                         ->label('Length'),
-                                    Forms\Components\TextInput::make('dimensions.width')
+                                    TextInput::make('dimensions.width')
                                         ->numeric()
                                         ->label('Width'),
-                                    Forms\Components\TextInput::make('dimensions.height')
+                                    TextInput::make('dimensions.height')
                                         ->numeric()
                                         ->label('Height'),
                                 ])->columns(3),
-                            Forms\Components\Textarea::make('shipping_details')
+                            Textarea::make('shipping_details')
                                 ->rows(2)
                                 ->columnSpanFull(),
                         ])->columns(2),
 
-                        Forms\Components\Tabs\Tab::make('Media')->schema([
-                            Forms\Components\FileUpload::make('images')
+                        Tabs\Tab::make('Media')->schema([
+                            FileUpload::make('images')
                                 ->multiple()
                                 ->image()
                                 ->directory('products')
                                 ->columnSpanFull(),
                         ])->columns(1),
 
-                        Forms\Components\Tabs\Tab::make('Reviews & SEO')->schema([
-                            Forms\Components\Repeater::make('reviews')
+                        Tabs\Tab::make('Reviews & SEO')->schema([
+                            Repeater::make('reviews')
                                 ->schema([
-                                    Forms\Components\TextInput::make('author')
+                                    TextInput::make('author')
                                         ->maxLength(255),
-                                    Forms\Components\Textarea::make('content')
+                                    Textarea::make('content')
                                         ->rows(2)
                                         ->columnSpanFull(),
-                                    Forms\Components\TextInput::make('rating')
+                                    TextInput::make('rating')
                                         ->numeric()
                                         ->minValue(1)
                                         ->maxValue(5),
@@ -166,28 +170,28 @@ class ProductResource extends Resource
                                 ->reorderable()
                                 ->collapsible(),
 
-                            Forms\Components\Section::make('SEO Settings')
+                            Section::make('SEO Settings')
                                 ->schema([
-                                    Forms\Components\TextInput::make('seo_title')
+                                    TextInput::make('seo_title')
                                         ->maxLength(255),
-                                    Forms\Components\Textarea::make('seo_description')
+                                    Textarea::make('seo_description')
                                         ->rows(2),
-                                    Forms\Components\TagsInput::make('seo_keywords')
+                                    TagsInput::make('seo_keywords')
                                         ->columnSpanFull(),
-                                    Forms\Components\KeyValue::make('meta')
+                                    KeyValue::make('meta')
                                         ->columnSpanFull(),
                                 ])
                                 ->columns(1),
                         ])->columns(1),
 
-                        Forms\Components\Tabs\Tab::make('Status')->schema([
-                            Forms\Components\Toggle::make('is_featured')
+                        Tabs\Tab::make('Status')->schema([
+                            Toggle::make('is_featured')
                                 ->label('Featured Product'),
-                            Forms\Components\Toggle::make('is_bestseller')
+                            Toggle::make('is_bestseller')
                                 ->label('Bestseller'),
-                            Forms\Components\Toggle::make('is_new')
+                            Toggle::make('is_new')
                                 ->label('New Arrival'),
-                            Forms\Components\Toggle::make('is_published')
+                            Toggle::make('is_published')
                                 ->label('Published')
                                 ->default(true),
                         ])->columns(2),
@@ -270,9 +274,9 @@ class ProductResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListProducts::route('/'),
-            'create' => Pages\CreateProduct::route('/create'),
-            'edit' => Pages\EditProduct::route('/{record}/edit'),
+            'index' => ListProducts::route('/'),
+            'create' => CreateProduct::route('/create'),
+            'edit' => EditProduct::route('/{record}/edit'),
         ];
     }
 }
