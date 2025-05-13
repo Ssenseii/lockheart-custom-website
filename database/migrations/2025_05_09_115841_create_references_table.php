@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             
             $table->string('company_logo')->nullable();
-            $table->string('company_name');
+            $table->string('company_name')->nullable();
 
-            $table->string('title');
-            $table->text('description');
+            $table->string('title')->nullable();
+            $table->text('description')->nullable();
             
             $table->boolean('is_published')->default(false);
             

@@ -39,12 +39,12 @@ class ReferenceResource extends Resource
                                 ->columnSpanFull(),
 
                             TextInput::make('company_name')
-                                ->required()
+                                ->nullable()
                                 ->maxLength(255)
                                 ->columnSpanFull(),
 
                             TextInput::make('title')
-                                ->required()
+                                ->nullable()
                                 ->maxLength(255)
                                 ->columnSpanFull(),
 

@@ -1,0 +1,25 @@
+@use "./variables" as *;
+
+@mixin Center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin Button_interact{
+	cursor: pointer;
+	transition: transform 50ms ease;
+	
+	&:hover{
+		box-shadow: $box-shadow-4;
+		transform: translateY(-2px);
+		transition: transform 100ms ease;
+	}
+	
+	&:active{
+		transition: transform 100ms ease;
+		transform: translate(-1px);
+	}
+}
+
+

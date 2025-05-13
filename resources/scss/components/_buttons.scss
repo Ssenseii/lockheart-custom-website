@@ -1,0 +1,107 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    text-decoration: none;
+
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    span {
+        display: inline-block;
+    }
+
+    &--primary {
+        color: $tint-11;
+        background-color: $blue-4;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: $blue-6;
+        }
+        &:active {
+            background: $slate-gray-0;
+        }
+    }
+
+    &--secondary {
+        background: $slate-gray-10;
+        color: $slate-gray-1;
+
+        &:hover {
+            background: $slate-gray-8;
+        }
+        &:active {
+            background: $slate-gray-7;
+            transform: scale(0.98);
+        }
+    }
+
+    &--outline {
+        background: transparent;
+        border: 2px solid $slate-gray-0;
+        color: $slate-gray-0;
+
+        &:hover {
+            background: $slate-gray-0;
+            color: $tint-11;
+        }
+        &:active {
+            background: $slate-gray-0;
+        }
+    }
+
+    &--ghost {
+        background: transparent;
+        color: $slate-gray-0;
+
+        &:hover {
+            background: $tint-1;
+        }
+        &:active {
+            background: $tint-2;
+        }
+    }
+
+    &--solution {
+        color: $tint-11;
+        background-color: $green-6;
+        transition: all 0.3s ease;
+
+        animation: pulsate-green 2s infinite;
+
+        &:hover {
+            background-color: $green-6;
+            animation: pulsate-green 0.5s infinite;
+            transform: scale(1.05);
+        }
+
+        &:active {
+            background: $slate-gray-0;
+        }
+    }
+
+    &--disabled,
+    &:disabled {
+        background: $shade-5;
+        color: $shade-10;
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+
+    &:focus {
+        outline: 2px solid $blue-4;
+        outline-offset: 2px;
+    }
+}

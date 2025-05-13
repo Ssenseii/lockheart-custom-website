@@ -1,0 +1,146 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.header {
+    width: 100%;
+    background-color: #2222225c;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    position: fixed;
+    width: 100%;
+
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 0rem;
+        background-color: $brand-dark;
+        font-size: 0.875rem;
+        color: $brand-light;
+
+        padding-inline: 4rem;
+
+        &-links {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+            &-action {
+                display: flex;
+                align-items: center;
+                color: $brand-light;
+                text-decoration: none;
+                transition: color 0.2s ease-in-out;
+
+                svg {
+                    margin-right: 0.5rem;
+                    color: $brand-primary;
+                }
+
+                span {
+                    color: $brand-light;
+                    white-space: nowrap;
+                }
+
+                &:hover {
+                    color: $brand-primary;
+                }
+            }
+        }
+
+        &-social {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 0.25rem;
+
+            a {
+                height: 28px;
+                width: 28px;
+
+                display: grid;
+                place-items: center;
+
+                img {
+                    width: 18px;
+                    filter: invert(100%);
+                }
+            }
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 0rem;
+        flex-wrap: wrap;
+
+        padding-inline: 4rem;
+
+        &-logo img {
+            max-height: 60px;
+            height: auto;
+            width: auto;
+        }
+    }
+
+    &__left {
+        flex: 1 1 auto;
+    }
+
+    &__right {
+        flex: 2 1 auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    &__navigation {
+        display: flex;
+        gap: 2rem;
+        margin-right: 1rem;
+
+        a {
+            position: relative;
+            color: $brand-light;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.25rem 0;
+            transition: color 0.3s ease;
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 2px;
+                width: 100%;
+                background-color: $brand-primary;
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.3s ease;
+            }
+
+            &:hover {
+                color: $blue-7;
+
+                &::after {
+                    transform: scaleX(1);
+                }
+            }
+
+            &:not(:hover)::after {
+                transform: scaleX(0);
+                transform-origin: right;
+            }
+        }
+    }
+}

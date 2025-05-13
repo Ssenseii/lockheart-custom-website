@@ -1,0 +1,21 @@
+// @use 'abstracts/';
+@use "abstracts/variables";
+@use "abstracts/animations";
+@use "abstracts/mixins";
+
+// @use 'vendors/';
+
+// @use 'base/';
+@use "base/globals";
+
+// @use 'layout/';
+@use "layouts/header";
+@use "layouts/footer";
+
+// @use 'components/';
+@use "components/buttons";
+
+// @use 'pages/';
+@use "pages/home";
+
+// @use 'themes/';

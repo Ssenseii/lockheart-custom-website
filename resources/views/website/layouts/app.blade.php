@@ -41,13 +41,16 @@
     <link href="https://fonts.bunny.net/css?family=inter:300,400,500,700" rel="stylesheet" />
 
     <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    
+    @vite(['resources/scss/style.scss', 'resources/css/app.css', 'resources/js/app.js'])
+
     @stack('styles')
     @stack('head-scripts')
 </head>
 
 <body class="font-sans antialiased">
+    <!-- Header -->
+    @include('website.layouts.partials.header')
+
     <!-- Flash Messages -->
     @include('website.layouts.partials.flash-messages')
 
@@ -61,4 +64,5 @@
 
     @stack('scripts')
 </body>
+
 </html>
