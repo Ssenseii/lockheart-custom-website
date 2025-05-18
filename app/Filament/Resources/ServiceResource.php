@@ -29,7 +29,7 @@ class ServiceResource extends Resource
                 Tabs::make('Service Details')
                     ->tabs([
                         Tabs\Tab::make('Basic Info')->schema([
-                            TextInput::make('slug')
+                            TextInput::make('title')
                                 ->required()
                                 ->maxLength(255)
                                 ->live(onBlur: true)

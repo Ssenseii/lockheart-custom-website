@@ -9,7 +9,9 @@
 
     position: fixed;
     width: 100%;
+    z-index: 10000;
 
+    transition: all 0.3s ease;
 
     &__top {
         display: flex;
@@ -141,6 +143,26 @@
                 transform: scaleX(0);
                 transform-origin: right;
             }
+        }
+    }
+}
+
+// Changes to the header
+
+.header--scrolled {
+    background-color: white;
+    backdrop-filter: none;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+
+    .header__navigation a {
+        color: black;
+
+        &::after {
+            background-color: $brand-primary;
+        }
+
+        &:hover {
+            color: $blue-7;
         }
     }
 }

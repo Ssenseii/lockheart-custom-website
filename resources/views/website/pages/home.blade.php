@@ -76,7 +76,7 @@
                             <span class="result__label">Années d'Expérience</span>
                         </div>
                     </div>
-                    
+
                 </div>
                 <div class="references__pyramid">
                     @foreach ($references->where('is_published', true)->whereNotNull('company_logo') as $reference)
@@ -90,19 +90,202 @@
         @endif
     </section>
 
-
     {{-- About --}}
+    <section class="home__about">
+        <div class="about__container">
+            <div class="about__content">
+                <strong class="about__tag">À Propos de Nous</strong>
+                <h2 class="about__tagline">Chez Aladam Group, Nous Construisons Des Expériences</h2>
+                <p class="about__subtitle">L'Art de l'Aménagement, Réinventé</p>
+                <div class="about__image">
+                    <img src="{{ asset('images/home__about.jpg') }}" alt="Aladam Group Ceiling Installation ">
+                </div>
+                <p class="about__description">Au-delà des cloisons et des faux plafonds, nous sculptons des environnements
+                    qui inspirent, fonctionnent et évoluent avec vous. Notre approche ? Un mélange rare entre l'artisanat
+                    marocain et l'innovation technique, où chaque projet devient une signature.</p>
 
-    <section class='home__about'>
-        
+                <div class="about__differentiators">
+                    <h3 class="about__differentiators-title">Pourquoi Nous Sommes Différents :</h3>
+                    <ul class="about__points">
+                        <li class="about__point">
+
+                            <span class="about__point-icon">
+                                <img src="{{ asset('images/icons/social-listening.png') }}" alt="social icon">
+                            </span>
+                            <span class="about__point-title">Écoute Radicale</span>
+                            <span class="about__point-text">Nous captons ce que vous ne dites pas (vos silences ont autant
+                                de valeur que vos briefs).</span>
+                        </li>
+                        <li class="about__point">
+                            <span class="about__point-icon">
+                                <img src="{{ asset('images/icons/design-thinking.png') }}" alt="design icon">
+                            </span>
+                            <span class="about__point-title">Design Tactique</span>
+                            <span class="about__point-text">Chaque choix, du BA13 à la climatisation, est une stratégie
+                                pour votre confort ou productivité.</span>
+                        </li>
+                        <li class="about__point">
+                            <span class="about__point-icon">
+                                <img src="{{ asset('images/icons/transparency.png') }}" alt="transparency icon">
+                            </span>
+                            <span class="about__point-title">Transparence Totale</span>
+                            <span class="about__point-text">Pas de surprises, juste des comptes-rendus honnêtes et un
+                                planning visible en temps réel.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="about__credo">
+                    <p class="about__credo-text">"Un espace bien conçu doit vous ressembler, pas à nos précédents projets."
+                    </p>
+                    <a href="#" class="button button--primary">Découvrez Notre Philosophie en Action →</a>
+                </div>
+            </div>
+        </div>
     </section>
 
     {{-- Services --}}
-    {{-- Products --}}
+    <section class="home__services">
+        <div class="home__services-container">
+            <div class="home__services-text">
+                <span class="home__services-tag">Services</span>
+                <h2 class="home__services-title">Des Solutions Sur Mesure, de la Conception à la Réalisation</h2>
+                <p class="home__services-description">
+                    Chez Aladam Group, nous transformons vos espaces avec une expertise polyvalente et un savoir-faire
+                    artisanal. Que ce soit pour un commerce élégant, un bureau ergonomique, ou une maison harmonieuse, nos
+                    spécialistes conjuguent créativité et technicité pour livrer des résultats impeccables. Chaque détail
+                    est pensé, chaque projet est unique.
+                </p>
+                <div class="home__services-buttons">
+                    <a href="#" class="button button--primary">Explorer nos services</a>
+                    <a href="#" class="button button--outline">Contactez-nous</a>
+                </div>
+            </div>
+
+            <div class="home__services-cards">
+                @if ($services->count())
+                    @foreach ($services as $service)
+                        <div class="service-card">
+                            <div class="service-card__image-container">
+                                <img src="{{ $service->image_url }}" alt="{{ $service->title }}"
+                                    class="service-card__image" loading="lazy" width="300" height="225">
+                                <div class="service-card__overlay"></div>
+                            </div>
+                            <div class="service-card__content">
+                                <h3 class="service-card__title">{{ $service->title }}</h3>
+                                <p class="service-card__description">{{ $service->short_description }}</p>
+                                <div class="service-card__footer">
+                                    <a href="/services/{{ $service->slug }}" class="service-card__button">
+                                        <span>{{ $service->cta_button_label ?? 'Voir Plus' }}</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M5 12h14M12 5l7 7-7 7" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                @endif
+            </div>
+
+
+        </div>
+    </section>
+
+    {{-- Produits --}}
+    <section class="home__products">
+        <div class="home__products-container">
+            <div class="home__products-header">
+                <div class="home__products-text">
+                    <span class="home__products-tag">Nos Produits</span>
+                    <h2 class="home__products-title">Des Produits d'Excellence, Fabriqués avec Passion</h2>
+                    <p class="home__products-description">
+                        Découvrez notre sélection de produits haut de gamme conçus pour répondre à vos besoins les plus
+                        exigeants.
+                        Chaque pièce est le résultat d'un savoir-faire artisanal et d'une attention méticuleuse aux détails.
+                        Que vous cherchiez des solutions durables ou des créations uniques, notre gamme saura vous
+                        surprendre.
+                    </p>
+                    <div class="home__products-buttons">
+                        <a href="#" class="button button--primary">Découvrir nos produits</a>
+                        <a href="#" class="button button--outline">Demander un devis</a>
+                    </div>
+                </div>
+
+                <div class="home__products-image">
+                    <img src="{{ asset('images/home_products.jpeg') }}" alt="Aladam Group Products ">
+                </div>
+            </div>
+
+            <div class="home__products-cards">
+                @if ($products->count())
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
+                        @foreach ($products as $product)
+                            <div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-200 flex flex-col h-full"
+                                style="min-height: 420px;">
+                                <!-- Product Image -->
+                                @if (!empty($product->images) && is_array($product->images))
+                                    <div class="relative aspect-[4/3] overflow-hidden">
+                                        <img src="{{ Storage::url($product->images[0]) }}" alt="{{ $product->name }}"
+                                            class="w-full h-full object-cover">
+                                    </div>
+                                @else
+                                    <div class="aspect-[4/3] bg-gray-100 flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                    </div>
+                                @endif
+
+                                <!-- Product Info -->
+                                <div class="p-4 flex-grow flex flex-col">
+                                    <!-- Tag/Badge -->
+                                    @if ($product->category)
+                                        <span
+                                            class="text-xs text-blue-600 font-medium mb-1">{{ $product->category }}</span>
+                                    @endif
+
+                                    <!-- Title -->
+                                    <h2 class="text-lg font-semibold text-gray-800 mb-2">
+                                        <a href="#" class="hover:text-blue-600">
+                                            {{ $product->name }}
+                                        </a>
+                                    </h2>
+
+                                    <!-- Short Description -->
+                                    @if ($product->short_description)
+                                        <p class="text-gray-600 text-sm mb-3 line-clamp-2">
+                                            {{ $product->short_description }}
+                                        </p>
+                                    @endif
+
+                                    <div class="mt-auto pt-2">
+                                        <a href="#"
+                                            class="block w-full bg-gray-100 hover:bg-blue-500 text-gray-800 hover:text-gray-100 text-center text-sm font-medium py-2 px-4 rounded transition-colors duration-200">
+                                            Voir plus
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                @else
+                    <div class="text-center py-12">
+                        <h2 class="text-xl font-medium text-gray-600">Aucun produit trouvé</h2>
+                        <p class="mt-2 text-gray-500">Revenez plus tard pour découvrir nos nouveautés</p>
+                    </div>
+                @endif
+            </div>
+        </div>
+    </section>
+
     {{-- Contact --}}
-    
 
-@endsection
 
-@section('scripts')
+
 @endsection
