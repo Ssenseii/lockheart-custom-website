@@ -14,7 +14,7 @@ class HomeController extends Controller
     public function index()
     {
         $references = Reference::latest()->get(); 
-        $services = Service::latest()->take(10)->get(); 
+        $services = Service::latest()->take(2)->get(); 
         
         $products = Product::latest()->take(6)->get(); // Example: get latest 6 products
         $blogs = Blog::latest()->take(6)->get(); // Example: get latest 6 blogs

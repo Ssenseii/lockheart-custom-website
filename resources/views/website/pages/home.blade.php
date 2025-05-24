@@ -48,8 +48,8 @@
     {{-- References --}}
     <section class="home__references">
         @if ($references->count())
-            <div class="references__container">
-                <div class="references__text">
+            <div class="home__references__container">
+                <div class="home__references__text">
                     <strong>REFERENCES</strong>
                     <h2>Nos Réalisations & Témoignages</h2>
                     <p>
@@ -58,11 +58,11 @@
                         chaque réalisation reflète notre engagement qualité et savoir-faire.
                         Faites-nous confiance pour transformer vos idées en réalité.
                     </p>
-                    <div class="references__buttons">
+                    <div class="home__references__buttons">
                         <a href="{{ route('references') }}" class="button button--primary">Voir toutes nos références</a>
                         <a href="{{ route('contact') }}" class="button button--outline">Nous Contacter</a>
                     </div>
-                    <div class="references__results">
+                    <div class="home__references__results">
                         <div class="result">
                             <span class="result__value">+120</span>
                             <span class="result__label">Projets Livrés</span>
@@ -78,11 +78,11 @@
                     </div>
 
                 </div>
-                <div class="references__pyramid">
+                <div class="home__references__pyramid">
                     @foreach ($references->where('is_published', true)->whereNotNull('company_logo') as $reference)
-                        <div class="references__logo">
+                        <div class="home__references__logo">
                             <img src="{{ asset('storage/' . $reference->company_logo) }}"
-                                alt="{{ $reference->company_name }} logo" class="references__image">
+                                alt="{{ $reference->company_name }} logo" class="home__references__image">
                         </div>
                     @endforeach
                 </div>
@@ -92,51 +92,55 @@
 
     {{-- About --}}
     <section class="home__about">
-        <div class="about__container">
-            <div class="about__content">
-                <strong class="about__tag">À Propos de Nous</strong>
-                <h2 class="about__tagline">Chez Aladam Group, Nous Construisons Des Expériences</h2>
-                <p class="about__subtitle">L'Art de l'Aménagement, Réinventé</p>
-                <div class="about__image">
+        <div class="home__about__container">
+            <div class="home__about__content">
+                <strong class="home__about__tag">À Propos de Nous</strong>
+                <h2 class="home__about__tagline">Chez Aladam Group, Nous Construisons Des Expériences</h2>
+                <p class="home__about__subtitle">L'Art de l'Aménagement, Réinventé</p>
+                <div class="home__about__image">
                     <img src="{{ asset('images/home__about.jpg') }}" alt="Aladam Group Ceiling Installation ">
                 </div>
-                <p class="about__description">Au-delà des cloisons et des faux plafonds, nous sculptons des environnements
+                <p class="home__about__description">Au-delà des cloisons et des faux plafonds, nous sculptons des
+                    environnements
                     qui inspirent, fonctionnent et évoluent avec vous. Notre approche ? Un mélange rare entre l'artisanat
                     marocain et l'innovation technique, où chaque projet devient une signature.</p>
 
-                <div class="about__differentiators">
-                    <h3 class="about__differentiators-title">Pourquoi Nous Sommes Différents :</h3>
-                    <ul class="about__points">
-                        <li class="about__point">
+                <div class="home__about__differentiators">
+                    <h3 class="home__about__differentiators-title">Pourquoi Nous Sommes Différents :</h3>
+                    <ul class="home__about__points">
+                        <li class="home__about__point">
 
-                            <span class="about__point-icon">
+                            <span class="home__about__point-icon">
                                 <img src="{{ asset('images/icons/social-listening.png') }}" alt="social icon">
                             </span>
-                            <span class="about__point-title">Écoute Radicale</span>
-                            <span class="about__point-text">Nous captons ce que vous ne dites pas (vos silences ont autant
+                            <span class="home__about__point-title">Écoute Radicale</span>
+                            <span class="home__about__point-text">Nous captons ce que vous ne dites pas (vos silences ont
+                                autant
                                 de valeur que vos briefs).</span>
                         </li>
-                        <li class="about__point">
-                            <span class="about__point-icon">
+                        <li class="home__about__point">
+                            <span class="home__about__point-icon">
                                 <img src="{{ asset('images/icons/design-thinking.png') }}" alt="design icon">
                             </span>
-                            <span class="about__point-title">Design Tactique</span>
-                            <span class="about__point-text">Chaque choix, du BA13 à la climatisation, est une stratégie
+                            <span class="home__about__point-title">Design Tactique</span>
+                            <span class="home__about__point-text">Chaque choix, du BA13 à la climatisation, est une
+                                stratégie
                                 pour votre confort ou productivité.</span>
                         </li>
-                        <li class="about__point">
-                            <span class="about__point-icon">
+                        <li class="home__about__point">
+                            <span class="home__about__point-icon">
                                 <img src="{{ asset('images/icons/transparency.png') }}" alt="transparency icon">
                             </span>
-                            <span class="about__point-title">Transparence Totale</span>
-                            <span class="about__point-text">Pas de surprises, juste des comptes-rendus honnêtes et un
+                            <span class="home__about__point-title">Transparence Totale</span>
+                            <span class="home__about__point-text">Pas de surprises, juste des comptes-rendus honnêtes et un
                                 planning visible en temps réel.</span>
                         </li>
                     </ul>
                 </div>
 
-                <div class="about__credo">
-                    <p class="about__credo-text">"Un espace bien conçu doit vous ressembler, pas à nos précédents projets."
+                <div class="home__about__credo">
+                    <p class="home__about__credo-text">"Un espace bien conçu doit vous ressembler, pas à nos précédents
+                        projets."
                     </p>
                     <a href="#" class="button button--primary">Découvrez Notre Philosophie en Action →</a>
                 </div>
@@ -169,7 +173,7 @@
                             <div class="service-card__image-container">
                                 <img src="{{ $service->image_url }}" alt="{{ $service->title }}"
                                     class="service-card__image" loading="lazy" width="300" height="225">
-                                <div class="service-card__overlay"></div>
+                                {{-- <div class="service-card__overlay"></div> --}}
                             </div>
                             <div class="service-card__content">
                                 <h3 class="service-card__title">{{ $service->title }}</h3>
@@ -188,9 +192,27 @@
                         </div>
                     @endforeach
                 @endif
+                <a href="/services" class="service-card service-card--link">
+                    <div class="service-card__image-container">
+                        <img src="{{ asset('images/hero_services/hero_serv1.jpg') }}" alt="Découvrir tous nos services" class="service-card__image"
+                            loading="lazy" width="300" height="225">
+                    </div>
+                    <div class="service-card__content">
+                        <h3 class="service-card__title">Découvrir plus de services</h3>
+                        <p class="service-card__description">Explorez l'ensemble de nos services industrielles professionnels</p>
+                        <div class="service-card__footer">
+                            <div style="background: #000000 !important" class="service-card__button">
+                                <span>Explorer Plus</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
             </div>
-
-
         </div>
     </section>
 
@@ -284,7 +306,72 @@
         </div>
     </section>
 
-    {{-- Contact --}}
+    {{-- Pourquoi Nous Choisir --}}
+    <section class="home__why">
+        <div class="home__why-container">
+            <div class="home__why-text">
+                <strong class="home__why-tag">Pourquoi Nous Choisir</strong>
+                <h2 class="home__why-title">Une Différence Qui Se Voit et Se Vit</h2>
+                <p class="home__why-description">
+                    Chez Aladam Group, nous faisons plus que rénover ou aménager. Nous créons des espaces qui inspirent
+                    confiance, renforcent votre image de marque, et améliorent votre quotidien. Notre réputation repose sur
+                    des valeurs solides et des résultats concrets.
+                </p>
+            </div>
+
+            <div class="home__why-grid">
+                <div class="why-card">
+                    <img src="{{ asset('images/icons/badge.png') }}" alt="Qualité" class="why-card__icon">
+                    <h3 class="why-card__title">Qualité Garantie</h3>
+                    <p class="why-card__text">Matériaux de premier choix, finitions impeccables et suivi rigoureux de
+                        chaque étape du chantier.</p>
+                </div>
+
+                <div class="why-card">
+                    <img src="{{ asset('images/icons/management.png') }}" alt="Équipe" class="why-card__icon">
+                    <h3 class="why-card__title">Équipe Multidisciplinaire</h3>
+                    <p class="why-card__text">Architectes, techniciens, artisans : un écosystème d’experts qui travaillent
+                        main dans la main.</p>
+                </div>
+
+                <div class="why-card">
+                    <img src="{{ asset('images/icons/fast-time.png') }}" alt="Délais" class="why-card__icon">
+                    <h3 class="why-card__title">Respect des Délais</h3>
+                    <p class="why-card__text">Nous livrons dans les temps. Ni plus, ni moins. Un planning clair et
+                        respecté, quoi qu’il arrive.</p>
+                </div>
+
+                <div class="why-card">
+                    <img src="{{ asset('images/icons/customer-service.png') }}" alt="Support" class="why-card__icon">
+                    <h3 class="why-card__title">Accompagnement Complet</h3>
+                    <p class="why-card__text">De la conception au service après-vente, vous avez un interlocuteur dédié à
+                        chaque étape.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    {{-- CTA --}}
+    <section class="home__cta">
+        <div class="cta__container">
+            <div class="cta__content">
+                <h2 class="cta__title">Prêt à Transformer Votre Espace ?</h2>
+                <p class="cta__text">
+                    Faites le premier pas vers un intérieur qui vous ressemble. Contactez notre équipe et obtenez un devis
+                    personnalisé sous 48h.
+                </p>
+                <div class="cta__buttons">
+                    <a href="{{ route('contact') }}" class="button button--primary">Demander un Devis</a>
+                    <a href="{{ route('references') }}" class="button button--outline">Voir Nos Références</a>
+                </div>
+            </div>
+            {{-- <div class="cta__image"> 
+                <img src="{{ asset('images/cta_background.jpg') }}" alt="Aladam Group Interior Project"> 
+            </div> --}}
+        </div>
+    </section>
+
 
 
 
