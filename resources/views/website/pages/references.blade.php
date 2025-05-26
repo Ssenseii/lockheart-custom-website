@@ -18,7 +18,6 @@
             </p>
             <div class="references__buttons">
                 <a href="#" class="references__button references__button--primary">Nous Rejoindre</a>
-                <a href="#" class="references__button references__button--secondary">En Savoir Plus</a>
             </div>
         </header>
 

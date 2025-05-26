@@ -26,11 +26,6 @@ h3 {
     font-family: "Funnel Sans", sans-serif;
 }
 
-body {
-    &::selection {
-        background-color: $blue-5;
-    }
-}
 
 .alert {
     padding: 1rem;

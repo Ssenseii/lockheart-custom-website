@@ -3,6 +3,19 @@ import "./bootstrap";
 document.addEventListener("DOMContentLoaded", function () {
     const header = document.querySelector(".header");
     const hero = document.querySelector(".home__hero");
+    const serviceHero = document.querySelector(
+        ".service_page"
+    ); 
+    const products = document.querySelector(
+        ".products"
+    ); 
+    const product = document.querySelector(".product_page"); 
+
+    if (serviceHero || products || product) {
+        header.style.position = "static"; 
+        header.classList.add("header--scrolled"); 
+        return; 
+    }
 
     if (hero) {
         const observer = new IntersectionObserver(

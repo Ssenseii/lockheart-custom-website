@@ -7,7 +7,7 @@
     gap: 0.5rem;
     padding: 0.5rem 1.25rem;
     font-weight: 600;
-    border-radius: 8px;
+    border-radius: 2rem;
     border: none;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
@@ -36,29 +36,30 @@
     }
 
     &--secondary {
-        background: $slate-gray-10;
-        color: $slate-gray-1;
+        color: $tint-11;
+        background-color: $green-6;
+        transition: background-color 0.3s ease;
 
         &:hover {
-            background: $slate-gray-8;
+            background-color: $green-7;
         }
         &:active {
-            background: $slate-gray-7;
-            transform: scale(0.98);
+            background: $slate-gray-0;
         }
     }
 
+
     &--outline {
         background: transparent;
-        border: 2px solid $slate-gray-0;
-        color: $slate-gray-0;
+        border: 2px solid $green-6;
+        color: $green-6;
 
         &:hover {
-            background: $slate-gray-0;
+            background: $green-6;
             color: $tint-11;
         }
         &:active {
-            background: $slate-gray-0;
+            background: $green-6;
         }
     }
 

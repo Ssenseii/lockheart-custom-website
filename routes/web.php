@@ -18,3 +18,7 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 // Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 
 Route::get('/services/{slug}', [ServicesController::class, 'show'])->name('service.show');
+
+Route::get('/products/{slug}', [ProductsController::class, 'show'])->name('product.show');
+Route::post('/product/buy', [ProductsController::class, 'buy'])->name('product.buy');
+

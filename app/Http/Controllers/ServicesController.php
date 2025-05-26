@@ -10,7 +10,8 @@ class ServicesController extends Controller
 
     public function index()
     {
-        return view('website.pages.services');
+        $services = Service::all();
+        return view('website.pages.services', compact('services'));
     }
 
     public function show($slug)

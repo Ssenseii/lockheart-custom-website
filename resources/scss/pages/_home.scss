@@ -1,11 +1,10 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
-// ======================
-// Home Hero Section
-// ======================
 
-
+// ======================
+// Hero Section
+// ======================
 .home__hero {
     height: 100dvh;
     background: url("../../../public/images/hero-4.jpg") center/cover no-repeat;
@@ -114,6 +113,7 @@
         }
     }
 }
+
 
 // ======================
 // References Section
@@ -235,6 +235,7 @@
         max-width: 100%;
     }
 }
+
 
 // ======================
 // About Section
@@ -385,6 +386,7 @@
     }
 }
 
+
 // ======================
 // Services Section
 // ======================
@@ -393,10 +395,11 @@
     justify-content: center;
     align-items: center;
     padding: 4rem 2rem;
-    
+
     position: relative;
-    
-    background: url("../../../public/images/headers/header-1.jpg") center/cover no-repeat;
+
+    background: url("../../../public/images/headers/header-3.jpg") center/cover
+        no-repeat;
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -404,7 +407,6 @@
     color: white;
     font-family: $font-family-body;
     text-align: center;
-
 
     &-container {
         width: 100%;
@@ -469,103 +471,104 @@
             grid-auto-rows: minmax(200px, auto);
         }
     }
-}
 
-.service-card {
-    width: 400px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background: white;
-
-    border: 1px solid #acacac;
-
-    &:hover {
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-    }
-
-    &__image-container {
-        position: relative;
-        width: 100%;
-        height: 225px;
+    .service-card {
+        width: 400px;
+        border-radius: 12px;
         overflow: hidden;
-    }
-
-    &__image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-    }
-
-    &__overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.1) 0%,
-            rgba(0, 0, 0, 0.7) 100%
-        );
-    }
-
-    &__content {
-        padding: 1.5rem;
-        display: flex;
-        flex-direction: column;
-    }
-
-    &__title {
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: $brand-primary;
-        margin: 0 0 0.75rem 0;
-        line-height: 1.3;
-    }
-
-    &__description {
-        font-size: 0.95rem;
-        color: #555;
-        margin: 0 0 1.5rem 0;
-        line-height: 1.5;
-    }
-
-    &__button {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.75rem 1.5rem;
-        background-color: $brand-primary;
-        color: white;
-        border-radius: 6px;
-        text-decoration: none;
-        font-weight: 500;
-        transition: all 0.2s ease;
-
-        width: 100%;
-        text-align: center;
-
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background: white;
+    
+        border: 1px solid #acacac;
+    
         &:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+    
+        &__image-container {
+            position: relative;
+            width: 100%;
+            height: 225px;
+            overflow: hidden;
+        }
+    
+        &__image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    
+        &__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.1) 0%,
+                rgba(0, 0, 0, 0.7) 100%
+            );
+        }
+    
+        &__content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+    
+        &__title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: $brand-primary;
+            margin: 0 0 0.75rem 0;
+            line-height: 1.3;
+        }
+    
+        &__description {
+            font-size: 0.95rem;
+            color: #555;
+            margin: 0 0 1.5rem 0;
+            line-height: 1.5;
+        }
+    
+        &__button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
             background-color: $brand-primary;
-
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+    
+            width: 100%;
+            text-align: center;
+    
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+    
+            &:hover {
+                background-color: $brand-primary;
+    
+                svg {
+                    transform: translateX(2px);
+                }
+            }
+    
             svg {
-                transform: translateX(2px);
+                transition: transform 0.2s ease;
             }
         }
-
-        svg {
-            transition: transform 0.2s ease;
-        }
     }
 }
+
 
 // ======================
 // Products Section
@@ -575,6 +578,8 @@
     justify-content: center;
     align-items: center;
     padding: 4rem 2rem;
+
+    background-color: #f8f8f8;
 
     &-container {
         width: 100%;
@@ -780,6 +785,7 @@
     }
 }
 
+
 // ======================
 // Why Choose Us Section
 // ======================
@@ -883,13 +889,15 @@
     }
 }
 
+
 // ======================
 // CTA Section
 // ======================
 .home__cta {
     position: relative;
-    
-    background: url("../../../public/images/home__cta.jpg") center/cover no-repeat;
+
+    background: url("../../../public/images/home__cta.jpg") center/cover
+        no-repeat;
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -897,7 +905,7 @@
     color: white;
     font-family: $font-family-body;
     text-align: center;
-    
+
     &::before {
         content: "";
         position: absolute;
@@ -919,7 +927,6 @@
         align-items: center;
         justify-content: center;
         gap: $space-4;
-
 
         @media (min-width: 768px) {
             flex-direction: row;
@@ -1002,9 +1009,4 @@
     }
 }
 
-// Responsive adjustments
-@media (min-width: 768px) {
-    .home__why {
-        padding: 6rem 4rem;
-    }
-}
+
