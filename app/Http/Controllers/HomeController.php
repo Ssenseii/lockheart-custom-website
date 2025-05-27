@@ -15,10 +15,8 @@ class HomeController extends Controller
     {
         $references = Reference::latest()->get(); 
         $services = Service::latest()->take(2)->get(); 
+        $products = Product::latest()->take(2)->get();
         
-        $products = Product::latest()->take(6)->get(); // Example: get latest 6 products
-        $blogs = Blog::latest()->take(6)->get(); // Example: get latest 6 blogs
-        $testimonials = Testimonial::latest()->take(6)->get(); // Example: get latest 6 references
-        return view('website.pages.home', compact(['services', 'products', 'blogs', 'references', 'testimonials']));
+        return view('website.pages.home', compact(['services', 'products', 'references']));
     }
 }

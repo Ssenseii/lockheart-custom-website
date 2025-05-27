@@ -2,4 +2,168 @@
 @use "../abstracts/mixins" as *;
 
 .footer {
+    background-color: #0f141a;
+    color: #ecf0f1;
+    padding: 4rem 0 2rem;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+
+    &__container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 3rem;
+
+        &--border {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    &__col {
+        padding: 0 15px;
+        width: 100%;
+        margin-bottom: 2rem;
+
+        @media (min-width: 768px) {
+            &--brand {
+                width: 25%;
+            }
+
+            &--menu {
+                width: 20%;
+                margin-left: auto;
+            }
+
+            &--legal {
+                width: 50%;
+            }
+        }
+    }
+
+    &__brand {
+        margin-bottom: 1.5rem;
+    }
+
+    &__logo {
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 1rem;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: #3498db;
+        }
+    }
+
+    &__description {
+        font-size: 0.9rem;
+        opacity: 0.8;
+        margin-bottom: 1.5rem;
+    }
+
+    &__heading {
+        color: #fff;
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 30px;
+            height: 2px;
+            background-color: #3498db;
+        }
+    }
+
+    &__menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__menu-item {
+        margin-bottom: 0.5rem;
+    }
+
+    &__menu-link {
+        color: #bdc3c7;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: #3498db;
+        }
+    }
+
+    &__divider {
+        height: 1px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.1);
+        margin-bottom: 1.5rem;
+    }
+
+    &__legal-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__legal-item {
+        margin-right: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    &__legal-link {
+        color: #7f8c8d;
+        font-size: 0.8rem;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: #3498db;
+        }
+    }
+
+    &__social-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__social-item {
+        margin-left: 1rem;
+    }
+
+    &__social-link {
+        color: #7f8c8d;
+        font-size: 1.2rem;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: #3498db;
+        }
+    }
+
+    &__copyright {
+        font-size: 0.8rem;
+        opacity: 0.7;
+    }
 }

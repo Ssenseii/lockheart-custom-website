@@ -1,20 +1,16 @@
 # Base
 
-[] - Home
+[X] - Home
 [X] - Services Page
 [X] - Service Page
-[] - Products Page
-[
-
-    
-] - Product Page
+[X] - Products Page
+[X] - Product Page
 [X] - About Page
 [X] - References Page
 [X] - Contact Page
-[] - 404 and Other Pages Needed.
+[X] - 404 and Other Pages Needed.
 [] - Admin Panel Layout
 [] - Admin Panel Dashboard
-
 
 # Responsive
 
@@ -31,7 +27,6 @@
 [] - Contact Page
 [] - 404 and Other Pages Needed.
 
-
 # Functionality
 
 [] - Contact Forms
@@ -39,7 +34,6 @@
 [] - All Functional Buttons
 [] - Settings Page Connect to Backend
 [] - Correct Contacts
-
 
 # Database
 
@@ -53,6 +47,7 @@
 [] - Images and asset optimization
 [] - SEO Consideration
 [] - Keywords and Tags
+[] - Favicon
 
 # Animations
 
@@ -65,7 +60,7 @@
 [] - CDN all the assets
 [] - Whatsapp Floating Button
 [] - Unified Button Look
-[] - Different Header BG 
+[] - Different Header BG
 
 # Notes
 
