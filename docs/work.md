@@ -43,12 +43,12 @@
 
 # Performance and SEO
 
-[] - Optimize and bundle all code
-[] - Lazy Loading
-[] - Images and asset optimization
+[X] - Optimize and bundle all code
+[X] - Lazy Loading
+[X] - Images and asset optimization
 [] - SEO Consideration
 [] - Keywords and Tags
-[] - Favicon
+[X] - Favicon
 
 
 # Animations

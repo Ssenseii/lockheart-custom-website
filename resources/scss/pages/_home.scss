@@ -6,7 +6,7 @@
 // ======================
 .home__hero {
     min-height: 100dvh;
-    background: url("../../../public/images/hero.webp") center/cover no-repeat;
+    background: url("../../images/hero.webp") center/cover no-repeat;
     display: flex;
     flex-direction: row;
     align-items: flex-end;
@@ -24,7 +24,7 @@
     }
 
     &-title {
-        font-size: 4.25rem;
+        font-size: 3.5rem;
         font-weight: 700;
         line-height: 1.2;
         color: $brand-light;
@@ -659,8 +659,7 @@
 // Services Section
 // ======================
 .home__services {
-    background: url("../../../public/images/headers/header-3.webp") center/cover
-        no-repeat;
+    background: url("../../images/headers/header-3.webp") center/cover no-repeat;
     background-attachment: fixed;
     padding: $space-4 $space-2;
     font-family: $font-family-body;
@@ -1342,8 +1341,7 @@
 // ======================
 .home__cta {
     position: relative;
-    background: url("../../../public/images/home__cta.webp") center/cover
-        no-repeat;
+    background: url("../../images/home__cta.webp") center/cover no-repeat;
     background-attachment: fixed;
     padding: $space-4 $space-2;
     color: white;

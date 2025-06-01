@@ -22,7 +22,7 @@
                         @if (isset($product->images) && count($product->images) > 0)
                             <!-- Main Image -->
                             <div class="mb-4 aspect-w-4 aspect-h-3 bg-gray-100 rounded-lg overflow-hidden">
-                                <img src="/{{ $product->images[0] }}" alt="{{ $product->name }}"
+                                <img loading="lazy"src="/{{ $product->images[0] }}" alt="{{ $product->name }}"
                                     class="w-full h-full object-cover">
                             </div>
 
@@ -31,7 +31,7 @@
                                 <div class="grid grid-cols-4 gap-2">
                                     @foreach ($product->images as $image)
                                         <div class="aspect-w-4 aspect-h-3 bg-gray-100 rounded overflow-hidden">
-                                            <img src="/{{ $image }}" alt="{{ $product->name }}"
+                                            <img loading="lazy"src="/{{ $image }}" alt="{{ $product->name }}"
                                                 class="w-full h-full object-cover">
                                         </div>
                                     @endforeach
@@ -314,7 +314,7 @@
         @endif
 
         <!-- Order Form Section -->
-        <section  id="order-form" class="py-12 bg-blue-50 scroll-mt-24">
+        <section id="order-form" class="py-12 bg-blue-50 scroll-mt-24">
             <div class="container mx-auto px-4">
                 <div class="max-w-3xl mx-auto">
                     <div class="flex items-center gap-2 mb-6">

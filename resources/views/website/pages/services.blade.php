@@ -25,8 +25,8 @@
                     <div
                         class="service-section {{ $index % 2 === 0 ? 'service-section--image-right' : 'service-section--image-left' }}">
                         <div class="service-section__image-container">
-                            <img src="{{ $service->image_url }}" alt="{{ $service->title }}" class="service-section__image"
-                                loading="lazy">
+                            <img loading="lazy"src="{{ $service->image_url }}" alt="{{ $service->title }}"
+                                class="service-section__image" loading="lazy">
                         </div>
                         <div class="service-section__content">
                             <h2 class="service-section__title">{{ $service->title }}</h2>

@@ -11,8 +11,8 @@
         text-align: center;
         padding-top: 250px;
         padding-bottom: $space-6;
-        background: url("../../../public/images/headers/header-1.webp")
-            center/cover no-repeat;
+        background: url("../../images/headers/header-1.webp") center/cover
+            no-repeat;
         background-position: center center;
         animation: drift-x 10s infinite alternate ease-in-out,
             drift-y 12s infinite alternate ease-in-out;
@@ -210,8 +210,7 @@
     }
 
     &__cta {
-        background: url("../../../public/images/about__cta.webp") center/cover
-            no-repeat;
+        background: url("../../images/about__cta.webp") center/cover no-repeat;
         background-attachment: fixed;
         background-size: cover;
         background-position: center;

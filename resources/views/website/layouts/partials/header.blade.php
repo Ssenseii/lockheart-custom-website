@@ -26,26 +26,26 @@
         </div>
         <div class="header__top-social">
             @if ($settings->social_linkedin)
-                <a  href="https://www.linkedin.com/{{ $settings->social_linkedin }}" class="header__top-social-button">
-                    <img src="{{ asset('images/social-media/linkedin.svg') }}" alt="">
+                <a href="https://www.linkedin.com/{{ $settings->social_linkedin }}" class="header__top-social-button">
+                    <img loading="lazy"src="{{ asset('images/social-media/linkedin.svg') }}" alt="">
                 </a>
             @endif
 
             @if ($settings->social_facebook)
                 <a href="https://www.facebook.com/{{ $settings->social_facebook }}" class="header__top-social-button">
-                    <img src="{{ asset('images/social-media/facebook.svg') }}" alt="">
+                    <img loading="lazy"src="{{ asset('images/social-media/facebook.svg') }}" alt="">
                 </a>
             @endif
 
             @if ($settings->social_instagram)
                 <a href="{{ $settings->social_instagram }}" class="header__top-social-button">
-                    <img src="{{ asset('images/social-media/instagram.svg') }}" alt="">
+                    <img loading="lazy"src="{{ asset('images/social-media/instagram.svg') }}" alt="">
                 </a>
             @endif
 
             @if ($settings->social_tiktok)
                 <a href="{{ $settings->social_tiktok }}" class="header__top-social-button">
-                    <img src="{{ asset('images/social-media/tiktok.svg') }}" alt="">
+                    <img loading="lazy"src="{{ asset('images/social-media/tiktok.svg') }}" alt="">
                 </a>
             @endif
         </div>
@@ -54,7 +54,7 @@
     <div class="header__bottom">
         <div class="header__left">
             <a class="header__bottom-logo" href="{{ route('home') }}">
-                <img src="{{ asset($settings->logo_path ?? 'images/logo_aladam.webp') }}" alt="Logo">
+                <img loading="lazy"src="{{ asset($settings->logo_path ?? 'images/logo_aladam.webp') }}" alt="Logo">
             </a>
         </div>
 

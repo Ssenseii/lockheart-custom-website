@@ -17,7 +17,7 @@
                 Découvrez comment nous avons aidé nos clients à atteindre leurs objectifs.
             </p>
             <div class="references__buttons">
-                <a href="{{route('contact')}}" class="references__button references__button--primary">Nous Rejoindre</a>
+                <a href="{{ route('contact') }}" class="references__button references__button--primary">Nous Rejoindre</a>
             </div>
         </header>
 
@@ -54,7 +54,7 @@
                     <div class="references__logos-grid">
                         @foreach ($references->where('is_published', true)->whereNotNull('company_logo') as $reference)
                             <div class="logo__item">
-                                <img src="{{ asset('storage/' . $reference->company_logo) }}"
+                                <img loading="lazy"src="{{ asset('storage/' . $reference->company_logo) }}"
                                     alt="{{ $reference->company_name }} logo" class="logo__image">
                             </div>
                         @endforeach

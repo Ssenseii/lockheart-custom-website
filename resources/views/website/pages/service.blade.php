@@ -4,7 +4,8 @@
     <!-- Hero Section with Service Image -->
     @if ($service->image_url)
         <div class="relative h-130 w-full overflow-hidden bg-gray-100 service_page">
-            <img src="/{{ $service->image_url }}" alt="{{ $service->title }}" class="w-full h-full object-cover object-center">
+            <img loading="lazy"src="/{{ $service->image_url }}" alt="{{ $service->title }}"
+                class="w-full h-full object-cover object-center">
 
             <div class="absolute inset-0 bg-slate-900/50 flex items-center justify-center">
                 <div class="text-center px-4">

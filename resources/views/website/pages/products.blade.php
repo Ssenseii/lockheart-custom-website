@@ -38,8 +38,8 @@
                         <article class="product-card">
                             <figure class="product-card__image-wrapper">
                                 @if (!empty($product->images) && is_array($product->images))
-                                    <img src="{{ Storage::url($product->images[0]) }}" alt="{{ $product->name }}"
-                                        class="product-card__image" loading="lazy">
+                                    <img loading="lazy"src="{{ Storage::url($product->images[0]) }}"
+                                        alt="{{ $product->name }}" class="product-card__image" loading="lazy">
                                 @else
                                     <div class="product-card__image-placeholder">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"

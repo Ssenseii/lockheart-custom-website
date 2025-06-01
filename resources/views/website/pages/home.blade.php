@@ -9,10 +9,10 @@
         <div class="home__hero-column">
             <div class="home__hero-socials">
                 <a href="https://www.linkedin.com/{{ $settings->social_linkedin }}">
-                    <img src="{{ asset('images/social-media/linkedin.svg') }}" alt="">
+                    <img loading="lazy"src="{{ asset('images/social-media/linkedin.svg') }}" alt="">
                 </a>
                 <a href="https://www.facebook.com/{{ $settings->social_facebook }}">
-                    <img src="{{ asset('images/social-media/facebook.svg') }}" alt="">
+                    <img loading="lazy"src="{{ asset('images/social-media/facebook.svg') }}" alt="">
                 </a>
             </div>
             <p class="home__hero-paragraph">Aladam Group transforme vos espaces commerciaux et résidentiels avec des designs
@@ -27,13 +27,13 @@
             <a href="{{ route('contact') }}" class="button button--primary">Demandez un Devis</a>
             <div class="home__hero-services">
                 <a href="{{ route('services') }}">
-                    <img src="{{ asset('images/hero_services/hero_serv1.webp') }}" alt="">
+                    <img loading="lazy"src="{{ asset('images/hero_services/hero_serv1.webp') }}" alt="">
                 </a>
                 <a href="{{ route('services') }}">
-                    <img src="{{ asset('images/hero_services/hero_serv2.webp') }}" alt="">
+                    <img loading="lazy"src="{{ asset('images/hero_services/hero_serv2.webp') }}" alt="">
                 </a>
                 <a href="{{ route('services') }}">
-                    <img src="{{ asset('images/hero_services/hero_serv3.webp') }}" alt="">
+                    <img loading="lazy"src="{{ asset('images/hero_services/hero_serv3.webp') }}" alt="">
                 </a>
             </div>
         </div>
@@ -75,7 +75,7 @@
                 <div class="home__references__pyramid">
                     @foreach ($references->where('is_published', true)->whereNotNull('company_logo') as $reference)
                         <div class="home__references__logo">
-                            <img src="{{ asset('storage/' . $reference->company_logo) }}" loading="lazy"
+                            <img loading="lazy"src="{{ asset('storage/' . $reference->company_logo) }}" loading="lazy"
                                 alt="{{ $reference->company_name }} logo" class="home__references__image">
                         </div>
                     @endforeach
@@ -92,7 +92,8 @@
                 <h2 class="home__about__tagline">Chez Aladam Group, Nous Construisons Des Expériences</h2>
                 <p class="home__about__subtitle">L'Art de l'Aménagement, Réinventé</p>
                 <div class="home__about__image">
-                    <img src="{{ asset('images/home__about.webp') }}" alt="Aladam Group Ceiling Installation ">
+                    <img loading="lazy"src="{{ asset('images/home__about.webp') }}"
+                        alt="Aladam Group Ceiling Installation ">
                 </div>
                 <p class="home__about__description">Au-delà des cloisons et des faux plafonds, nous sculptons des
                     environnements
@@ -105,7 +106,8 @@
                         <li class="home__about__point">
 
                             <span class="home__about__point-icon">
-                                <img src="{{ asset('images/icons/social-listening.png') }}" alt="social icon">
+                                <img loading="lazy"src="{{ asset('images/icons/social-listening.png') }}"
+                                    alt="social icon">
                             </span>
                             <span class="home__about__point-title">Écoute Radicale</span>
                             <span class="home__about__point-text">Nous captons ce que vous ne dites pas (vos silences ont
@@ -114,7 +116,7 @@
                         </li>
                         <li class="home__about__point">
                             <span class="home__about__point-icon">
-                                <img src="{{ asset('images/icons/design-thinking.png') }}" alt="design icon">
+                                <img loading="lazy"src="{{ asset('images/icons/design-thinking.png') }}" alt="design icon">
                             </span>
                             <span class="home__about__point-title">Design Tactique</span>
                             <span class="home__about__point-text">Chaque choix, du BA13 à la climatisation, est une
@@ -123,7 +125,8 @@
                         </li>
                         <li class="home__about__point">
                             <span class="home__about__point-icon">
-                                <img src="{{ asset('images/icons/transparency.png') }}" alt="transparency icon">
+                                <img loading="lazy"src="{{ asset('images/icons/transparency.png') }}"
+                                    alt="transparency icon">
                             </span>
                             <span class="home__about__point-title">Transparence Totale</span>
                             <span class="home__about__point-text">Pas de surprises, juste des comptes-rendus honnêtes et un
@@ -166,7 +169,7 @@
                     @foreach ($services as $service)
                         <div class="service-card">
                             <div class="service-card__image-container">
-                                <img src="{{ $service->image_url }}" alt="{{ $service->title }}"
+                                <img loading="lazy"src="{{ $service->image_url }}" alt="{{ $service->title }}"
                                     class="service-card__image" loading="lazy" width="300" height="225">
                                 {{-- <div class="service-card__overlay"></div> --}}
                             </div>
@@ -189,8 +192,9 @@
                 @endif
                 <a href="/services" class="service-card service-card--link">
                     <div class="service-card__image-container">
-                        <img src="{{ asset('images/hero_services/hero_serv1.webp') }}" alt="Découvrir tous nos services"
-                            class="service-card__image" loading="lazy" width="300" height="225">
+                        <img loading="lazy"src="{{ asset('images/hero_services/hero_serv1.webp') }}"
+                            alt="Découvrir tous nos services" class="service-card__image" loading="lazy" width="300"
+                            height="225">
                     </div>
                     <div class="service-card__content">
                         <h3 class="service-card__title">Découvrir plus de services</h3>
@@ -233,7 +237,7 @@
                 </div>
 
                 <div class="home__products-image">
-                    <img src="{{ asset('images/home_products.webp') }}" alt="Aladam Group Products ">
+                    <img loading="lazy"src="{{ asset('images/home_products.webp') }}" alt="Aladam Group Products ">
                 </div>
             </div>
 
@@ -246,8 +250,8 @@
                             <!-- Product Image -->
                             @if (!empty($product->images) && is_array($product->images))
                                 <div class="relative aspect-[4/3] overflow-hidden">
-                                    <img src="{{ Storage::url($product->images[0]) }}" alt="{{ $product->name }}"
-                                        class="w-full h-full object-cover">
+                                    <img loading="lazy"src="{{ Storage::url($product->images[0]) }}"
+                                        alt="{{ $product->name }}" class="w-full h-full object-cover">
                                 </div>
                             @else
                                 <div class="aspect-[4/3] bg-gray-100 flex items-center justify-center">
@@ -314,28 +318,32 @@
 
             <div class="home__why-grid">
                 <div class="why-card">
-                    <img src="{{ asset('images/icons/badge.png') }}" alt="Qualité" class="why-card__icon">
+                    <img loading="lazy"src="{{ asset('images/icons/badge.png') }}" alt="Qualité"
+                        class="why-card__icon">
                     <h3 class="why-card__title">Qualité Garantie</h3>
                     <p class="why-card__text">Matériaux de premier choix, finitions impeccables et suivi rigoureux de
                         chaque étape du chantier.</p>
                 </div>
 
                 <div class="why-card">
-                    <img src="{{ asset('images/icons/management.png') }}" alt="Équipe" class="why-card__icon">
+                    <img loading="lazy"src="{{ asset('images/icons/management.png') }}" alt="Équipe"
+                        class="why-card__icon">
                     <h3 class="why-card__title">Équipe Multidisciplinaire</h3>
                     <p class="why-card__text">Architectes, techniciens, artisans : un écosystème d’experts qui travaillent
                         main dans la main.</p>
                 </div>
 
                 <div class="why-card">
-                    <img src="{{ asset('images/icons/fast-time.png') }}" alt="Délais" class="why-card__icon">
+                    <img loading="lazy"src="{{ asset('images/icons/fast-time.png') }}" alt="Délais"
+                        class="why-card__icon">
                     <h3 class="why-card__title">Respect des Délais</h3>
                     <p class="why-card__text">Nous livrons dans les temps. Ni plus, ni moins. Un planning clair et
                         respecté, quoi qu’il arrive.</p>
                 </div>
 
                 <div class="why-card">
-                    <img src="{{ asset('images/icons/customer-service.png') }}" alt="Support" class="why-card__icon">
+                    <img loading="lazy"src="{{ asset('images/icons/customer-service.png') }}" alt="Support"
+                        class="why-card__icon">
                     <h3 class="why-card__title">Accompagnement Complet</h3>
                     <p class="why-card__text">De la conception au service après-vente, vous avez un interlocuteur dédié à
                         chaque étape.</p>

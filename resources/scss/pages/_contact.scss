@@ -12,8 +12,8 @@
         text-align: center;
         padding-block: $space-6;
 
-        background: url("../../../public/images/headers/header-1.webp")
-            center/cover no-repeat;
+        background: url("../../images/headers/header-1.webp") center/cover
+            no-repeat;
 
         // Animation properties
         animation: drift-x 20s infinite alternate ease-in-out,

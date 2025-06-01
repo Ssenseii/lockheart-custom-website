@@ -1,8 +1,8 @@
 <footer class="footer">
     <div class="footer__container">
         <div class="footer__row">
-            <img src="{{ asset($settings->logo_path ?? 'images/logo_aladam.webp') }}" alt="Logo {{ config('site.name') }}"
-                class=" h-16">
+            <img loading="lazy"src="{{ asset($settings->logo_path ?? 'images/logo_aladam.webp') }}"
+                alt="Logo {{ config('site.name') }}" class=" h-16">
         </div>
         <div class="footer__row">
             <div class="footer__col footer__col--brand">

@@ -29,7 +29,7 @@
                     <h2 class="home__about__tagline">Aladam Group en Quelques Mots</h2>
                     <p class="home__about__subtitle">Expertise et Passion Réunies</p>
                     <div class="home__about__image">
-                        <img src="{{ asset('images/home__about.webp') }}" alt="Équipe Aladam Group">
+                        <img loading="lazy"src="{{ asset('images/home__about.webp') }}" alt="Équipe Aladam Group">
                     </div>
                     <p class="home__about__description">
                         Fondé avec la vision de redéfinir les standards de l'aménagement intérieur au Maroc, Aladam Group
@@ -43,7 +43,7 @@
                         <ul class="home__about__points">
                             <li class="home__about__point">
                                 <span class="home__about__point-icon">
-                                    <img src="{{ asset('images/icons/partitions.png') }}" alt="Cloisons icon">
+                                    <img loading="lazy"src="{{ asset('images/icons/partitions.png') }}" alt="Cloisons icon">
                                 </span>
                                 <span class="home__about__point-title">Cloisons Sur Mesure</span>
                                 <span class="home__about__point-text">Solutions modulaires adaptées à tous types d'espaces
@@ -51,7 +51,7 @@
                             </li>
                             <li class="home__about__point">
                                 <span class="home__about__point-icon">
-                                    <img src="{{ asset('images/icons/ceiling.png') }}" alt="Plafonds icon">
+                                    <img loading="lazy"src="{{ asset('images/icons/ceiling.png') }}" alt="Plafonds icon">
                                 </span>
                                 <span class="home__about__point-title">Faux Plafonds Innovants</span>
                                 <span class="home__about__point-text">Systèmes intégrant acoustique, éclairage et
@@ -59,7 +59,7 @@
                             </li>
                             <li class="home__about__point">
                                 <span class="home__about__point-icon">
-                                    <img src="{{ asset('images/icons/acoustic.png') }}" alt="Acoustique icon">
+                                    <img loading="lazy"src="{{ asset('images/icons/acoustic.png') }}" alt="Acoustique icon">
                                 </span>
                                 <span class="home__about__point-title">Solutions Acoustiques</span>
                                 <span class="home__about__point-text">Optimisation du confort sonore pour une meilleure
@@ -87,7 +87,7 @@
                     <h2 class="home__about__tagline">Une Croissance Marquée Par L'Innovation</h2>
                     <p class="home__about__subtitle">De 2018 à Aujourd'hui</p>
                     <div class="home__about__image">
-                        <img src="{{ asset('images/about__history.webp') }}" alt="Évolution d'Aladam Group">
+                        <img loading="lazy"src="{{ asset('images/about__history.webp') }}" alt="Évolution d'Aladam Group">
                     </div>
                     <p class="home__about__description">
                         Depuis notre création en 2018, nous avons constamment repoussé les limites de l'aménagement
@@ -101,7 +101,7 @@
                         <ul class="home__about__points">
                             <li class="home__about__point">
                                 <span class="home__about__point-icon">
-                                    <img src="{{ asset('images/icons/trophy.png') }}" alt="Trophée icon">
+                                    <img loading="lazy"src="{{ asset('images/icons/trophy.png') }}" alt="Trophée icon">
                                 </span>
                                 <span class="home__about__point-title">2015 - Certification ISO 9001</span>
                                 <span class="home__about__point-text">Reconnaissance de notre système de management de la
@@ -109,7 +109,7 @@
                             </li>
                             <li class="home__about__point">
                                 <span class="home__about__point-icon">
-                                    <img src="{{ asset('images/icons/building.png') }}" alt="Bâtiment icon">
+                                    <img loading="lazy"src="{{ asset('images/icons/building.png') }}" alt="Bâtiment icon">
                                 </span>
                                 <span class="home__about__point-title">2018 - Projet Phare</span>
                                 <span class="home__about__point-text">Aménagement de 25,000 m² pour un groupe bancaire
@@ -117,7 +117,7 @@
                             </li>
                             <li class="home__about__point">
                                 <span class="home__about__point-icon">
-                                    <img src="{{ asset('images/icons/management.png') }}" alt="Équipe icon">
+                                    <img loading="lazy"src="{{ asset('images/icons/management.png') }}" alt="Équipe icon">
                                 </span>
                                 <span class="home__about__point-title">2022 - Expansion</span>
                                 <span class="home__about__point-text">Ouverture de notre deuxième agence à
@@ -161,7 +161,8 @@
                 <div class="dna-grid">
                     <!-- Left Column: Image with Hover Effect -->
                     <div class="dna-image-wrapper">
-                        <img src="{{ asset('images/about__values.web') }}" alt="Valeurs Aladam Group" class="dna-image">
+                        <img loading="lazy"src="{{ asset('images/about__values.web') }}" alt="Valeurs Aladam Group"
+                            class="dna-image">
                         <div class="image-overlay"></div>
                     </div>
 
@@ -175,7 +176,7 @@
                             <!-- Mission Card -->
                             <div class="value-card" data-aos="fade-up">
                                 <div class="card-icon">
-                                    <img src="{{ asset('images/icons/mission.png') }}" alt="Mission">
+                                    <img loading="lazy"src="{{ asset('images/icons/mission.png') }}" alt="Mission">
                                 </div>
                                 <h3 class="card-title">Notre Mission</h3>
                                 <p class="card-text">
@@ -186,7 +187,7 @@
                             <!-- Vision Card -->
                             <div class="value-card" data-aos="fade-up" data-aos-delay="100">
                                 <div class="card-icon">
-                                    <img src="{{ asset('images/icons/vision.png') }}" alt="Vision">
+                                    <img loading="lazy"src="{{ asset('images/icons/vision.png') }}" alt="Vision">
                                 </div>
                                 <h3 class="card-title">Notre Vision</h3>
                                 <p class="card-text">
@@ -197,7 +198,7 @@
                             <!-- Values Card -->
                             <div class="value-card" data-aos="fade-up" data-aos-delay="200">
                                 <div class="card-icon">
-                                    <img src="{{ asset('images/icons/values.png') }}" alt="Valeurs">
+                                    <img loading="lazy"src="{{ asset('images/icons/values.png') }}" alt="Valeurs">
                                 </div>
                                 <h3 class="card-title">Nos Valeurs</h3>
                                 <p class="card-text">
@@ -225,7 +226,7 @@
                         </a>
                     </div>
                     <div class="about__catalogue__image">
-                        <img src="{{ asset('images/logo_aladam.webp') }}" alt="Catalogue Aladam Group">
+                        <img loading="lazy"src="{{ asset('images/logo_aladam.webp') }}" alt="Catalogue Aladam Group">
                     </div>
                 </div>
             </section>
