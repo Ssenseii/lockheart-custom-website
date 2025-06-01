@@ -1,8 +1,8 @@
 @extends('website.layouts.app')
 
-@section('title', 'À propos de Nous')
-@section('meta_description', 'Welcome to our about page with special offers')
-@section('meta_keywords', 'about, aladam, groupe')
+@section('title', 'À Propos de Nous – Aladam Groupe Casablanca')
+@section('meta_description', 'Aladam Groupe est votre partenaire en aménagement et agencement à Casablanca. Découvrez notre histoire, nos valeurs et notre engagement envers la qualité.')
+@section('meta_keywords', 'Aladam Groupe Casablanca, entreprise aménagement Maroc, à propos Aladam, agencement professionnel, design intérieur')
 
 @section('content')
     <main class="about">
@@ -161,7 +161,7 @@
                 <div class="dna-grid">
                     <!-- Left Column: Image with Hover Effect -->
                     <div class="dna-image-wrapper">
-                        <img loading="lazy"src="{{ asset('images/about__values.web') }}" alt="Valeurs Aladam Group"
+                        <img loading="lazy"src="{{ asset('images/about__values.webp') }}" alt="Valeurs Aladam Group"
                             class="dna-image">
                         <div class="image-overlay"></div>
                     </div>

@@ -1,9 +1,8 @@
 @extends('website.layouts.app')
 
-@section('title', 'Nos Produits')
-@section('meta_description', 'Découvrez notre gamme de produits d\'excellence')
-@section('meta_keywords', 'produits, aladam, groupe, catalogue')
-
+@section('title', 'Nos Produits – Solutions d’Aménagement à Casablanca')
+@section('meta_description', 'Découvrez nos produits de qualité pour l’aménagement de bureaux, magasins et espaces résidentiels à Casablanca. Mobilier, cloisons, revêtements et plus.')
+@section('meta_keywords', 'produits aménagement Casablanca, mobilier bureau Maroc, cloisons amovibles, revêtements sols murs, solutions Aladam Groupe')
 @section('content')
     <main class="products">
         <!-- Hero Section -->

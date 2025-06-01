@@ -1,8 +1,10 @@
 @extends('website.layouts.app')
 
-@section('title', 'References')
-@section('meta_description', 'Welcome to our references page with special offers')
-@section('meta_keywords', 'testomnials, references, logos')
+@section('title', 'Nos Références – Clients et Projets Aladam Groupe')
+@section('meta_description', 'Découvrez nos références clients : entreprises, commerces et particuliers qui nous ont
+    fait confiance pour leurs projets d’aménagement à Casablanca.')
+@section('meta_keywords', 'références clients Aladam, projets aménagement Casablanca, partenaires design intérieur,
+    clients agencement Maroc')
 
 @section('content')
     <main class="references">

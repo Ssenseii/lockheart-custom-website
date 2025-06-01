@@ -1,8 +1,9 @@
 @extends('website.layouts.app')
 
-@section('title', 'Homepage')
-@section('meta_description', 'Welcome to our homepage with special offers')
-@section('meta_keywords', 'home, welcome, offers')
+@section('title', 'Aménagement Professionnel et Particulier à Casablanca')
+@section('meta_description', 'Aménagement de magasins, bureaux, restaurants et maisons à Casablanca. Aladam Groupe transforme vos idées en espaces uniques.')
+@section('meta_keywords', 'aménagement Casablanca, agencement professionnel Maroc, design intérieur boutique, rénovation bureau, Aladam Groupe')
+
 
 @section('content')
     <section class="home__hero">

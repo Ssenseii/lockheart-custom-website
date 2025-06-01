@@ -50,20 +50,13 @@
 [] - Keywords and Tags
 [X] - Favicon
 
-
-# Animations
-
-[] - Section
-[] - buttons
-
 # Improvements
 
-[] - Icons on all Buttons
-[] - CDN all the assets
 [] - Whatsapp Floating Button
 [] - Unified Button Look
 [] - Different Header BG
 [] - Correct French Text
+[] - Fix the contrast ratios
 [] - Add a gallery
 
 # Notes

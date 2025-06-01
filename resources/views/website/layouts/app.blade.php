@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="language" content="fr">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -20,21 +21,14 @@
     <meta property="og:url" content="@yield('og_url', url()->current())">
     <meta property="og:type" content="website">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="@yield('twitter_title', config('site.meta.og_title'))">
-    <meta name="twitter:description" content="@yield('twitter_description', config('site.meta.og_description'))">
-    <meta name="twitter:image" content="@yield('twitter_image', asset('images/og-default.jpg'))">
-    <meta name="twitter:site" content="{{ config('site.twitter') }}">
-
     <!-- Canonical URL -->
     <link rel="canonical" href="@yield('canonical_url', url()->current())">
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
 
     @stack('meta')
 
@@ -48,8 +42,22 @@
     <!-- Scripts -->
     @vite(['resources/scss/style.scss', 'resources/css/app.css', 'resources/js/app.js'])
 
-    @stack('styles')
-    @stack('head-scripts')
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Aladam Groupe",
+          "url": "{{ url('/') }}",
+          "logo": "{{ asset('images/logo.png') }}",
+          "description": "Spécialistes en aménagement professionnel et particulier à Casablanca.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Casablanca",
+            "addressCountry": "MA"
+          }
+        }
+        </script>
+
 </head>
 
 <body class="font-sans antialiased">

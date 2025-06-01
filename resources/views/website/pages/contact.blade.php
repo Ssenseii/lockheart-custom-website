@@ -1,8 +1,8 @@
 @extends('website.layouts.app')
 
-@section('title', 'Contact')
-@section('meta_description', 'Welcome to our contact page with special offers')
-@section('meta_keywords', 'contact, email, newsletter')
+@section('title', 'Nos Services - Aménagement Professionnel et Particulier à Casablanca')
+@section('meta_description', 'Découvrez nos services d’aménagement pour commerces, bureaux, maisons et restaurants à Casablanca.')
+@section('meta_keywords', 'services aménagement Casablanca, agencement professionnel, design intérieur, Aladam Groupe')
 
 @section('content')
 
@@ -25,8 +25,8 @@
             </span>
 
             <h1 class="contact__title">Nous sommes là pour vous aider</h1>
-            <p class="contact__description">Notre équipe est disponible pour répondre à toutes vos questions et vous
-                accompagner dans vos projets.</p>
+            <p class="contact__description">Aladam Groupe propose des solutions complètes d’aménagement professionnel et particulier à Casablanca.
+                Notre équipe est spécialisée dans la conception, l’agencement et la rénovation de tous types d'espaces.</p>
             <div class="contact__buttons">
                 <a href="{{ route('products') }}" class="contact__button contact__button--products">Nos produits</a>
                 <a href="{{ route('services') }}" class="contact__button contact__button--services">Nos services</a>

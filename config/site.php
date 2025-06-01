@@ -1,13 +1,12 @@
 <?php
 
 return [
-    'name' => env('SITE_NAME', 'My Awesome Site'),
-    'company' => env('COMPANY_NAME', 'My Company LLC'),
-    'twitter' => env('TWITTER_HANDLE', '@MyCompany'),
+    'name' => 'Aladam Group',
+    'company' => 'Aladam Groupe',
     'meta' => [
-        'description' => env('META_DESCRIPTION', 'Default description for SEO'),
-        'keywords' => env('META_KEYWORDS', 'default, keywords'),
-        'og_title' => env('OG_TITLE', 'Default Open Graph Title'),
-        'og_description' => env('OG_DESCRIPTION', 'Default Open Graph Description'),
+        'description' => 'Experts en aménagement professionnel et particulier à Casablanca. Agencement de magasins, bureaux, restaurants, salons, maisons, et plus.',
+        'keywords' => 'aménagement professionnel Casablanca, agencement particulier Maroc, design intérieur magasin, rénovation bureau, Aladam Groupe',
+        'og_title' => 'Aménagement Professionnel et Particulier à Casablanca | Aladam Groupe',
+        'og_description' => 'Solutions sur mesure pour l\'agencement et l\'aménagement de vos espaces professionnels et particuliers à Casablanca.',
     ],
 ];

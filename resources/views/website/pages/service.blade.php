@@ -1,5 +1,8 @@
 @extends('website.layouts.app')
 
+@section('title', $service->title)
+@section('meta_description', $service->description)
+
 @section('content')
     <!-- Hero Section with Service Image -->
     @if ($service->image_url)
