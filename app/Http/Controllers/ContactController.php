@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ContactMessageMail;
+use App\Models\ContactMessage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
@@ -33,6 +34,9 @@ class ContactController extends Controller
         }
 
         try {
+
+            ContactMessage::create($request->all());
+            
             $contactData = $request->only(['name', 'email', 'subject', 'message']);
 
             // Send the email to your support/admin email

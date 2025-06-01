@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\ProductOrderMail;
 use App\Mail\ProductOrderNotification;
 use App\Models\Product;
+use App\Models\ProductOrder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
@@ -40,6 +41,13 @@ class ProductsController extends Controller
         }
 
         try {
+
+
+            $data = $request->all();
+            $data['quantity'] = $data['quantity'] ?? 1;
+
+            $productOrder = ProductOrder::create($data);
+
             $orderData = $request->only(['name', 'email', 'phone', 'quantity', 'message', 'product']);
 
             Mail::to(config('mail.from.address'))->send(new ProductOrderMail($orderData));
