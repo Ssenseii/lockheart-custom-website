@@ -10,8 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
         ".products"
     ); 
     const product = document.querySelector(".product_page"); 
+    const contact = document.querySelector(".contact_page"); 
 
-    if (serviceHero || products || product) {
+    if (serviceHero || products || product || contact) {
         header.style.position = "static"; 
         header.classList.add("header--scrolled"); 
         return; 
@@ -38,3 +39,4 @@ document.addEventListener("DOMContentLoaded", function () {
         header.classList.add("header--scrolled");
     }
 });
+

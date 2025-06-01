@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ProductOrderMail;
 use App\Mail\ProductOrderNotification;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 
 class ProductsController extends Controller
 {
@@ -24,38 +26,27 @@ class ProductsController extends Controller
 
     public function buy(Request $request)
     {
-        // Validate the request data
-        $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-            'phone' => 'nullable|string|max:20',
-            'quantity' => 'required|integer|min:1',
-            'message' => 'nullable|string',
-            'product' => 'required|string',
+        $validator = Validator::make($request->all(), [
+            'name'     => 'required|string|max:255',
+            'email'    => 'required|email|max:255',
+            'phone'    => 'required|string|max:20',
+            'quantity' => 'nullable|integer|min:1',
+            'message'  => 'nullable|string',
+            'product'  => 'required|string|max:255',
         ]);
 
-        // Prepare the order data
-        $orderData = [
-            'product' => $validatedData['product'],
-            'name' => $validatedData['name'],
-            'email' => $validatedData['email'],
-            'phone' => $validatedData['phone'] ?? 'Non fourni',
-            'quantity' => $validatedData['quantity'],
-            'message' => $validatedData['message'] ?? 'Aucun message supplémentaire',
-            'orderDate' => now()->format('d/m/Y H:i'),
-        ];
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
 
-        // Send email (to admin and optionally to customer)
         try {
-            // Send to admin
-            Mail::to('admin@example.com')->send(new ProductOrderNotification($orderData));
+            $orderData = $request->only(['name', 'email', 'phone', 'quantity', 'message', 'product']);
 
-            // Optionally send a copy to the customer
-            Mail::to($validatedData['email'])->send(new ProductOrderNotification($orderData, true));
+            Mail::to(config('mail.from.address'))->send(new ProductOrderMail($orderData));
 
-            return back()->with('success', 'Votre demande a été envoyée avec succès! Nous vous contacterons bientôt.');
+            return redirect()->back()->with('success', 'Votre commande a été envoyée avec succès.');
         } catch (\Exception $e) {
-            return back()->with('error', 'Une erreur est survenue lors de l\'envoi de votre demande. Veuillez réessayer.')->withInput();
+            return redirect()->back()->with('error', 'Une erreur est survenue lors de l’envoi de la commande.');
         }
     }
 }

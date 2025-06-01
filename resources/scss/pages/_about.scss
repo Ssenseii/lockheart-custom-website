@@ -18,6 +18,14 @@
         animation: drift-x 20s infinite alternate ease-in-out,
             drift-y 20s infinite alternate ease-in-out;
         overflow: hidden;
+
+        @media (max-width: 1024px) {
+            padding-top: 200px;
+        }
+
+        @media (max-width: 768px) {
+            padding-top: 150px;
+        }
     }
 
     &__tag {
@@ -42,6 +50,15 @@
         font-weight: 700;
         line-height: $line-height-heading;
         margin-bottom: $space-3;
+        color: #000000;
+
+        @media (max-width: 1024px) {
+            font-size: $font-size-6;
+        }
+
+        @media (max-width: 768px) {
+            font-size: $font-size-5;
+        }
     }
 
     &__description {
@@ -50,12 +67,22 @@
         max-width: 700px;
         margin: 0 auto $space-4;
         color: $slate-gray-4;
+
+        @media (max-width: 768px) {
+            font-size: $font-size-3;
+            padding: 0 $space-3;
+        }
     }
 
     &__buttons {
         display: flex;
         gap: $space-3;
         justify-content: center;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     &__button {
@@ -84,6 +111,11 @@
                 color: white;
             }
         }
+
+        @media (max-width: 768px) {
+            width: 80%;
+            text-align: center;
+        }
     }
 
     &__services-banner {
@@ -103,6 +135,10 @@
             p {
                 font-size: $font-size-4;
                 margin: 0;
+
+                @media (max-width: 768px) {
+                    font-size: $font-size-3;
+                }
             }
         }
     }
@@ -123,14 +159,22 @@
                 flex-direction: row;
                 justify-content: space-between;
             }
+
+            @media (max-width: 768px) {
+                padding: 0 $space-3;
+            }
         }
 
         &__content {
             flex: 1;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
             @media (min-width: 768px) {
                 text-align: left;
+                align-items: flex-start;
             }
         }
 
@@ -148,12 +192,20 @@
             font-size: $font-size-6;
             color: $brand-dark;
             margin-bottom: 1rem;
+
+            @media (max-width: 768px) {
+                font-size: $font-size-5;
+            }
         }
 
         &__description {
             font-size: $font-size-3;
             margin-bottom: 2rem;
             color: $brand-dark;
+
+            @media (max-width: 768px) {
+                font-size: $font-size-2;
+            }
         }
     }
 
@@ -167,7 +219,6 @@
         color: white;
         font-family: $font-family-body;
         text-align: center;
-        
 
         color: white;
         padding: 4rem 1rem;
@@ -183,11 +234,19 @@
             font-size: $font-size-6;
             margin-bottom: 1rem;
             font-weight: 700;
+
+            @media (max-width: 768px) {
+                font-size: $font-size-5;
+            }
         }
 
         &__text {
             font-size: $font-size-3;
             margin-bottom: 2rem;
+
+            @media (max-width: 768px) {
+                font-size: $font-size-2;
+            }
         }
 
         &__buttons {
@@ -195,6 +254,11 @@
             gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
+
+            @media (max-width: 768px) {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     }
 }
@@ -203,106 +267,164 @@
 .about-dna {
     background: #f9f9f9;
     padding: 5rem 0;
-}
 
-.dna-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
+    @media (max-width: 1024px) {
+        padding: 2rem 0;
+    }
 
-.dna-header {
-    text-align: center;
-    margin-bottom: 3rem;
-}
+    @media (max-width: 768px) {
+        padding: 1rem 0;
+    }
 
-.dna-tag {
-    display: inline-block;
-    background: #e3f2fd;
-    color: #1976d2;
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 0.9rem;
-}
+    .dna-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
 
-.dna-tagline {
-    font-size: 2.5rem;
-    margin: 1rem 0 0.5rem;
-    color: #333;
-}
+        @media (max-width: 768px) {
+            padding: 0 $space-3;
+        }
+    }
 
-.dna-subtitle {
-    color: #666;
-    font-size: 1.1rem;
-}
+    .dna-header {
+        text-align: center;
+        margin-bottom: 3rem;
 
-/* Grid Layout */
-.dna-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-}
+        @media (max-width: 768px) {
+            margin-bottom: 2rem;
+        }
+    }
 
-.dna-image-wrapper {
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
+    .dna-tag {
+        display: inline-block;
+        background: #e3f2fd;
+        color: #1976d2;
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
 
-.dna-image {
-    width: 100%;
-    height: auto;
-    transition: transform 0.5s;
-}
+    .dna-tagline {
+        font-size: 2.5rem;
+        margin: 1rem 0 0.5rem;
+        color: #333;
 
-.image-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.1), transparent);
-}
+        @media (max-width: 1024px) {
+            font-size: 2rem;
+        }
 
-/* Value Cards */
-.value-cards {
-    display: grid;
-    gap: 1.5rem;
-}
+        @media (max-width: 768px) {
+            font-size: 1.75rem;
+        }
+    }
 
-.value-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: 1px solid #cacaca;
-}
+    .dna-subtitle {
+        color: #666;
+        font-size: 1.1rem;
 
-.value-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
+        @media (max-width: 768px) {
+            font-size: 1rem;
+        }
+    }
 
-.card-icon img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 1rem;
-}
+    /* Grid Layout */
+    .dna-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
 
-.card-title {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: $brand-primary;
-    font-family: $font-family-heading;
-    font-weight: 600;
-}
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+    }
 
-.card-text {
-    font-family: $font-family-body;
-    color: #555;
-    line-height: 1.6;
+    .dna-image-wrapper {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+        @media (max-width: 768px) {
+            order: -1;
+        }
+    }
+
+    .dna-image {
+        width: 100%;
+        height: auto;
+        transition: transform 0.5s;
+    }
+
+    .image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.1), transparent);
+    }
+
+    /* Value Cards */
+    .value-cards {
+        display: grid;
+        gap: 1.5rem;
+
+        @media (max-width: 768px) {
+            gap: 1rem;
+        }
+    }
+
+    .value-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s, box-shadow 0.3s;
+        border: 1px solid #cacaca;
+
+        @media (max-width: 768px) {
+            padding: 1.5rem;
+        }
+    }
+
+    .value-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-icon img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 1rem;
+
+        @media (max-width: 768px) {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        color: $brand-primary;
+        font-family: $font-family-heading;
+        font-weight: 600;
+
+        @media (max-width: 768px) {
+            font-size: 1.1rem;
+        }
+    }
+
+    .card-text {
+        font-family: $font-family-body;
+        color: #555;
+        line-height: 1.6;
+
+        @media (max-width: 768px) {
+            font-size: 0.9rem;
+        }
+    }
 }

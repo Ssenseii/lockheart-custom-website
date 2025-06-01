@@ -5,7 +5,19 @@
 @section('meta_keywords', 'contact, email, newsletter')
 
 @section('content')
-    <main class="contact">
+
+@if (session('success'))
+<div class="p-4 bg-green-100 text-green-700 rounded text-center">
+    {{ session('success') }}
+</div>
+@endif
+
+@if (session('error'))
+<div class=" p-4 bg-red-100 text-red-700 text-center rounded">
+    {{ session('error') }}
+</div>
+@endif
+    <main class="contact contact_page">
         <!-- Header Section -->
         <header class="contact__header">
             <span class="contact__tag">
@@ -33,26 +45,37 @@
             </div>
 
             <div class="contact__form-container">
-                <form class="contact__form">
+                <form class="contact__form" action="{{ route('contact.send') }}" method="POST">
+                    @csrf
+
                     <div class="contact__form-group">
                         <label for="name" class="contact__form-label">Nom complet</label>
-                        <input type="text" id="name" class="contact__form-input" placeholder="Votre nom">
+                        <input type="text" id="name" name="name" class="contact__form-input"
+                            placeholder="Votre nom" required>
                     </div>
+
                     <div class="contact__form-group">
                         <label for="email" class="contact__form-label">Email</label>
-                        <input type="email" id="email" class="contact__form-input" placeholder="votre@email.com">
+                        <input type="email" id="email" name="email" class="contact__form-input"
+                            placeholder="votre@email.com" required>
                     </div>
+
                     <div class="contact__form-group">
                         <label for="subject" class="contact__form-label">Sujet</label>
-                        <input type="text" id="subject" class="contact__form-input"
-                            placeholder="Objet de votre message">
+                        <input type="text" id="subject" name="subject" class="contact__form-input"
+                            placeholder="Objet de votre message" required>
                     </div>
+
                     <div class="contact__form-group">
                         <label for="message" class="contact__form-label">Message</label>
-                        <textarea id="message" class="contact__form-textarea" placeholder="Votre message..."></textarea>
+                        <textarea id="message" name="message" class="contact__form-textarea" placeholder="Votre message..." required></textarea>
                     </div>
+
+                 
                     <button type="submit" class="contact__form-submit">Envoyer le message</button>
                 </form>
+
+
 
                 <div class="contact__info">
                     <div class="contact__info-item">
@@ -108,9 +131,9 @@
                                 +33 1 23 45 67 89
                             </a>
                             <a href="tel:+33612345678" class="contact__info-contact">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round"
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
                                     class="icon icon-tabler icons-tabler-outline icon-tabler-device-mobile">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                     <path
@@ -292,4 +315,55 @@
 @endsection
 
 @section('scripts')
+    <script>
+        function contactForm() {
+            return {
+                form: {
+                    name: '',
+                    email: '',
+                    subject: '',
+                    message: '',
+                },
+                loading: false,
+                successMessage: '',
+                errorMessage: '',
+
+                async submitForm() {
+                    this.loading = true;
+                    this.successMessage = '';
+                    this.errorMessage = '';
+
+                    try {
+                        const response = await fetch("{{ route('contact.send') }}", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                                "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute(
+                                    'content')
+                            },
+                            body: JSON.stringify(this.form)
+                        });
+
+                        const data = await response.json();
+
+                        if (response.ok) {
+                            this.successMessage = data.message;
+                            this.form = {
+                                name: '',
+                                email: '',
+                                subject: '',
+                                message: ''
+                            };
+                        } else {
+                            this.errorMessage = data.message || 'Erreur lors de l’envoi.';
+                        }
+                    } catch (error) {
+                        this.errorMessage = 'Erreur réseau.';
+                    } finally {
+                        this.loading = false;
+                    }
+                }
+            };
+        }
+    </script>
 @endsection

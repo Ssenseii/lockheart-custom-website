@@ -29,7 +29,7 @@
             </a>
         </div>
         <div class="home__hero-column">
-            <h1 class="home__hero-title">Spécialiste en Aménagement Intérieur</h1>
+            <h1 class="home__hero-title">Spécialiste en Aménagement Professionelle</h1>
             <button class="button button--primary">Demandez un Devis</button>
             <div class="home__hero-services">
                 <a class="{{ route('services') }}">
@@ -194,14 +194,15 @@
                 @endif
                 <a href="/services" class="service-card service-card--link">
                     <div class="service-card__image-container">
-                        <img src="{{ asset('images/hero_services/hero_serv1.jpg') }}" alt="Découvrir tous nos services" class="service-card__image"
-                            loading="lazy" width="300" height="225">
+                        <img src="{{ asset('images/hero_services/hero_serv1.jpg') }}" alt="Découvrir tous nos services"
+                            class="service-card__image" loading="lazy" width="300" height="225">
                     </div>
                     <div class="service-card__content">
                         <h3 class="service-card__title">Découvrir plus de services</h3>
-                        <p class="service-card__description">Explorez l'ensemble de nos services industrielles professionnels</p>
+                        <p class="service-card__description">Explorez l'ensemble de nos services industrielles
+                            professionnels</p>
                         <div class="service-card__footer">
-                            <div style="background: #000000 !important" class="service-card__button">
+                            <div class="service-card__button">
                                 <span>Explorer Plus</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -244,58 +245,55 @@
             <div class="home__products-cards">
                 @if ($products->count())
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
-                        @foreach ($products as $product)
-                            <div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-200 flex flex-col h-full"
-                                style="min-height: 420px;">
-                                <!-- Product Image -->
-                                @if (!empty($product->images) && is_array($product->images))
-                                    <div class="relative aspect-[4/3] overflow-hidden">
-                                        <img src="{{ Storage::url($product->images[0]) }}" alt="{{ $product->name }}"
-                                            class="w-full h-full object-cover">
-                                    </div>
-                                @else
-                                    <div class="aspect-[4/3] bg-gray-100 flex items-center justify-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400"
-                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
-                                                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                        </svg>
-                                    </div>
+                    @foreach ($products as $product)
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-200 flex flex-col h-full"
+                            style="min-height: 420px;">
+                            <!-- Product Image -->
+                            @if (!empty($product->images) && is_array($product->images))
+                                <div class="relative aspect-[4/3] overflow-hidden">
+                                    <img src="{{ Storage::url($product->images[0]) }}" alt="{{ $product->name }}"
+                                        class="w-full h-full object-cover">
+                                </div>
+                            @else
+                                <div class="aspect-[4/3] bg-gray-100 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                            @endif
+
+                            <!-- Product Info -->
+                            <div class="p-4 flex-grow flex flex-col">
+                                <!-- Tag/Badge -->
+                                @if ($product->category)
+                                    <span class="text-xs text-blue-600 font-medium mb-1">{{ $product->category }}</span>
                                 @endif
 
-                                <!-- Product Info -->
-                                <div class="p-4 flex-grow flex flex-col">
-                                    <!-- Tag/Badge -->
-                                    @if ($product->category)
-                                        <span
-                                            class="text-xs text-blue-600 font-medium mb-1">{{ $product->category }}</span>
-                                    @endif
+                                <!-- Title -->
+                                <h2 class="text-lg font-semibold text-gray-800 mb-2">
+                                    <a href="#" class="hover:text-blue-600">
+                                        {{ $product->name }}
+                                    </a>
+                                </h2>
 
-                                    <!-- Title -->
-                                    <h2 class="text-lg font-semibold text-gray-800 mb-2">
-                                        <a href="#" class="hover:text-blue-600">
-                                            {{ $product->name }}
-                                        </a>
-                                    </h2>
+                                <!-- Short Description -->
+                                @if ($product->short_description)
+                                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">
+                                        {{ $product->short_description }}
+                                    </p>
+                                @endif
 
-                                    <!-- Short Description -->
-                                    @if ($product->short_description)
-                                        <p class="text-gray-600 text-sm mb-3 line-clamp-2">
-                                            {{ $product->short_description }}
-                                        </p>
-                                    @endif
-
-                                    <div class="mt-auto pt-2">
-                                        <a href="#"
-                                            class="block w-full bg-gray-100 hover:bg-blue-500 text-gray-800 hover:text-gray-100 text-center text-sm font-medium py-2 px-4 rounded transition-colors duration-200">
-                                            Voir plus
-                                        </a>
-                                    </div>
+                                <div class="mt-auto pt-2">
+                                    <a href="#"
+                                        class="block w-full bg-gray-100 hover:bg-blue-500 text-gray-800 hover:text-gray-100 text-center text-sm font-medium py-2 px-4 rounded transition-colors duration-200">
+                                        Voir plus
+                                    </a>
                                 </div>
                             </div>
-                        @endforeach
-                    </div>
+                        </div>
+                    @endforeach
                 @else
                     <div class="text-center py-12">
                         <h2 class="text-xl font-medium text-gray-600">Aucun produit trouvé</h2>

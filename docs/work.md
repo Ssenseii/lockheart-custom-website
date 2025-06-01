@@ -14,22 +14,22 @@
 
 # Responsive
 
-[] - Header
-[] - Footer
+[X] - Header
+[X] - Footer
 
-[] - Home
-[] - Services Page
-[] - Service Page
-[] - Products Page
-[] - Product Page
-[] - About Page
-[] - References Page
-[] - Contact Page
-[] - 404 and Other Pages Needed.
+[X] - Home
+[X] - Services Page
+[X] - Service Page
+[X] - Products Page
+[X] - Product Page
+[X] - About Page
+[X] - References Page
+[X] - Contact Page
+[X] - 404 and Other Pages Needed.
 
 # Functionality
 
-[] - Contact Forms
+[X] - Contact Forms
 [] - All Functional Links
 [] - All Functional Buttons
 [] - Settings Page Connect to Backend
@@ -44,10 +44,12 @@
 # Performance and SEO
 
 [] - Optimize and bundle all code
+[] - Lazy Loading
 [] - Images and asset optimization
 [] - SEO Consideration
 [] - Keywords and Tags
 [] - Favicon
+
 
 # Animations
 
@@ -61,6 +63,8 @@
 [] - Whatsapp Floating Button
 [] - Unified Button Look
 [] - Different Header BG
+[] - Correct French Text
+[] - Add a gallery
 
 # Notes
 
@@ -69,6 +73,10 @@
 
 # Final Delivery
 
+[] - Switch ENV to theirs
+[] - npm run build
+[] - Create a new Branch in Git 
+[] - Change Everything to ALADAM GROUPE
 [] - Switch Emails
 [] - Add Passwords
 [] - Fix env and htaccess for the cPanel

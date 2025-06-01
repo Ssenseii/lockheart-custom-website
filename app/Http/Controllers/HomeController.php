@@ -15,7 +15,7 @@ class HomeController extends Controller
     {
         $references = Reference::latest()->get(); 
         $services = Service::latest()->take(2)->get(); 
-        $products = Product::latest()->take(2)->get();
+        $products = Product::latest()->take(3)->get();
         
         return view('website.pages.home', compact(['services', 'products', 'references']));
     }

@@ -50,19 +50,19 @@
                 <h3 class="footer__heading">Assistance</h3>
                 <ul class="footer__menu">
                     <li class="footer__menu-item">
-                        <a href="#" class="footer__menu-link">FAQ</a>
+                        <a href="{{ route('contact') }}" class="footer__menu-link">FAQ</a>
                     </li>
                     <li class="footer__menu-item">
-                        <a href="#" class="footer__menu-link">Conditions de location</a>
+                        <a href="{{ route('contact') }}" class="footer__menu-link">Conditions de location</a>
                     </li>
                     <li class="footer__menu-item">
-                        <a href="#" class="footer__menu-link">Assistance routière</a>
+                        <a href="{{ route('contact') }}" class="footer__menu-link">Assistance routière</a>
                     </li>
                     <li class="footer__menu-item">
-                        <a href="#" class="footer__menu-link">Support client</a>
+                        <a href="{{ route('contact') }}" class="footer__menu-link">Support client</a>
                     </li>
                     <li class="footer__menu-item">
-                        <a href="#" class="footer__menu-link">Informations assurance</a>
+                        <a href="{{ route('contact') }}" class="footer__menu-link">Informations assurance</a>
                     </li>
                 </ul>
             </div>
@@ -87,20 +87,7 @@
                         <a href="#" class="footer__legal-link">Politique relative aux cookies</a>
                     </li>
                     <li class="footer__legal-item">
-                        <span class="footer__copyright">© 2025 HAG Maroc</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="footer__col footer__col--legal">
-                <ul class="footer__social-menu">
-                    <li class="footer__social-item">
-                        <a href="#" class="footer__social-link" aria-label="Instagram">#HireAutomotiveGroup</a>
-                    </li>
-                    <li class="footer__social-item">
-                        <a href="#" class="footer__social-link" aria-label="Twitter">#PrêtPourLAventure</a>
-                    </li>
-                    <li class="footer__social-item">
-                        <a href="#" class="footer__social-link" aria-label="Facebook">#ÉvasionWeekend</a>
+                        <span class="footer__copyright">© 2025 Aladam Group</span>
                     </li>
                 </ul>
             </div>
@@ -109,11 +96,7 @@
         <div class="footer__row">
             <div class="footer__col">
                 <p class="footer__disclaimer">
-                    Hire Automotive Group est un service premium de location de voitures
-                    opérant dans tout le Maroc. Tous les véhicules sont régulièrement
-                    entretenus et désinfectés. Les prix incluent l'assurance obligatoire et
-                    l'assistance routière. Le conducteur doit satisfaire aux exigences d'âge
-                    et présenter des documents valides.
+                    Powered by <a href="https://www.lockheart.org" target="_blank" rel="noreferrer" class="footer__disclaimer-link">Lockheart Labworks</a>.
                 </p>
             </div>
         </div>

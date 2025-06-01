@@ -4,14 +4,16 @@
 @section('meta_description', 'Découvrez notre gamme de produits d\'excellence')
 @section('meta_keywords', 'produits, aladam, groupe, catalogue')
 
-    @section('content')
+@section('content')
     <main class="products">
         <!-- Hero Section -->
         <section class="products__hero">
             <div class="products__hero-content">
-                <span class="products__tag">Notre Catalogue</span>
+                <div class="products__tag">
+                    <span class="contact__tag-pill">Notre Catalogue</span>
+                </div>
                 <h1 class="products__title">Nos Produits d'Excellence</h1>
-                <p class="products__lead">
+                <p class="products__description">
                     Découvrez notre sélection de produits haut de gamme conçus pour répondre à vos besoins les plus
                     exigeants.
                 </p>

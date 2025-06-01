@@ -40,6 +40,11 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=inter:300,400,500,700" rel="stylesheet" />
 
+    {{-- AlpineJS --}}
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <!-- Scripts -->
     @vite(['resources/scss/style.scss', 'resources/css/app.css', 'resources/js/app.js'])
 
@@ -50,9 +55,7 @@
 <body class="font-sans antialiased">
     <!-- Header -->
     @include('website.layouts.partials.header')
-
-    <!-- Flash Messages -->
-    @include('website.layouts.partials.flash-messages')
+    @include('website.layouts.partials.mobile-nav')
 
     <!-- Page Content -->
     <main>

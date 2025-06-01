@@ -44,6 +44,15 @@
         font-weight: 700;
         line-height: $line-height-heading;
         margin-bottom: $space-3;
+        color: #000000;
+
+        @media (max-width: 1024px) {
+            font-size: $font-size-6;
+        }
+
+        @media (max-width: 768px) {
+            font-size: $font-size-5;
+        }
     }
 
     &__description {
@@ -52,6 +61,11 @@
         max-width: 700px;
         margin: 0 auto $space-4;
         color: $slate-gray-4;
+
+        @media (max-width: 768px) {
+            font-size: $font-size-3;
+            padding: 0 $space-3;
+        }
     }
 
     &__listing {
@@ -208,7 +222,7 @@
 .services__cta {
     position: relative;
     background-color: $blue-5;
-    padding: $space-5 ;
+    padding: $space-5;
     text-align: center;
     overflow: hidden;
 

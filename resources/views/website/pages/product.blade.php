@@ -2,13 +2,13 @@
 
 @section('content')
     @if (session('success'))
-        <div class="mb-4 p-4 bg-green-100 text-green-700 rounded">
+        <div class="p-4 bg-green-100 text-green-700 rounded text-center">
             {{ session('success') }}
         </div>
     @endif
 
     @if (session('error'))
-        <div class="mb-4 p-4 bg-red-100 text-red-700 rounded">
+        <div class=" p-4 bg-red-100 text-red-700 rounded text-center">
             {{ session('error') }}
         </div>
     @endif
@@ -78,10 +78,11 @@
                             @endif
                         </div>
 
-                        <a href="{{ route('contact') }}?product={{ urlencode($product->name) }}"
+                        <a href="#order-form"
                             class="w-full md:w-auto px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md transition duration-200">
                             Commander ce produit
                         </a>
+
                     </div>
                 </div>
             </div>
@@ -313,7 +314,7 @@
         @endif
 
         <!-- Order Form Section -->
-        <section class="py-12 bg-blue-50">
+        <section  id="order-form" class="py-12 bg-blue-50 scroll-mt-24">
             <div class="container mx-auto px-4">
                 <div class="max-w-3xl mx-auto">
                     <div class="flex items-center gap-2 mb-6">
@@ -350,14 +351,14 @@
 
                         <div class="mb-4">
                             <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Votre
-                                téléphone</label>
+                                téléphone *</label>
                             <input type="tel" id="phone" name="phone"
                                 class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
 
                         <div class="mb-4">
                             <label for="quantity" class="block text-sm font-medium text-gray-700 mb-1">Quantité souhaitée
-                                *</label>
+                            </label>
                             <input type="number" id="quantity" name="quantity" min="1" value="1" required
                                 class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
