@@ -46,15 +46,15 @@
 [X] - Optimize and bundle all code
 [X] - Lazy Loading
 [X] - Images and asset optimization
-[] - SEO Consideration
-[] - Keywords and Tags
+[X] - SEO Consideration
+[X] - Keywords and Tags
 [X] - Favicon
 
 # Improvements
 
 [] - Whatsapp Floating Button
 [] - Unified Button Look
-[] - Different Header BG
+[X] - Different Header BG
 [] - Correct French Text
 [] - Fix the contrast ratios
 [] - Add a gallery
@@ -67,9 +67,9 @@
 # Final Delivery
 
 [] - Switch ENV to theirs
-[] - npm run build
+[X] - npm run build
 [] - Create a new Branch in Git 
-[] - Change Everything to ALADAM GROUPE
+[] - Change Everything to ALADAM GROUP
 [] - Switch Emails
 [] - Add Passwords
 [] - Fix env and htaccess for the cPanel
