@@ -27,13 +27,13 @@
             <a href="{{ route('contact') }}" class="button button--primary">Demandez un Devis</a>
             <div class="home__hero-services">
                 <a href="{{ route('services') }}">
-                    <img src="{{ asset('images/hero_services/hero_serv1.jpg') }}" alt="">
+                    <img src="{{ asset('images/hero_services/hero_serv1.webp') }}" alt="">
                 </a>
                 <a href="{{ route('services') }}">
-                    <img src="{{ asset('images/hero_services/hero_serv2.jpg') }}" alt="">
+                    <img src="{{ asset('images/hero_services/hero_serv2.webp') }}" alt="">
                 </a>
                 <a href="{{ route('services') }}">
-                    <img src="{{ asset('images/hero_services/hero_serv3.jpg') }}" alt="">
+                    <img src="{{ asset('images/hero_services/hero_serv3.webp') }}" alt="">
                 </a>
             </div>
         </div>
@@ -75,7 +75,7 @@
                 <div class="home__references__pyramid">
                     @foreach ($references->where('is_published', true)->whereNotNull('company_logo') as $reference)
                         <div class="home__references__logo">
-                            <img src="{{ asset('storage/' . $reference->company_logo) }}"
+                            <img src="{{ asset('storage/' . $reference->company_logo) }}" loading="lazy"
                                 alt="{{ $reference->company_name }} logo" class="home__references__image">
                         </div>
                     @endforeach
@@ -92,7 +92,7 @@
                 <h2 class="home__about__tagline">Chez Aladam Group, Nous Construisons Des Expériences</h2>
                 <p class="home__about__subtitle">L'Art de l'Aménagement, Réinventé</p>
                 <div class="home__about__image">
-                    <img src="{{ asset('images/home__about.jpg') }}" alt="Aladam Group Ceiling Installation ">
+                    <img src="{{ asset('images/home__about.webp') }}" alt="Aladam Group Ceiling Installation ">
                 </div>
                 <p class="home__about__description">Au-delà des cloisons et des faux plafonds, nous sculptons des
                     environnements
@@ -189,7 +189,7 @@
                 @endif
                 <a href="/services" class="service-card service-card--link">
                     <div class="service-card__image-container">
-                        <img src="{{ asset('images/hero_services/hero_serv1.jpg') }}" alt="Découvrir tous nos services"
+                        <img src="{{ asset('images/hero_services/hero_serv1.webp') }}" alt="Découvrir tous nos services"
                             class="service-card__image" loading="lazy" width="300" height="225">
                     </div>
                     <div class="service-card__content">
@@ -233,7 +233,7 @@
                 </div>
 
                 <div class="home__products-image">
-                    <img src="{{ asset('images/home_products.jpeg') }}" alt="Aladam Group Products ">
+                    <img src="{{ asset('images/home_products.webp') }}" alt="Aladam Group Products ">
                 </div>
             </div>
 
@@ -359,9 +359,6 @@
                     <a href="{{ route('references') }}" class="button button--outline">Voir Nos Références</a>
                 </div>
             </div>
-            {{-- <div class="cta__image"> 
-                <img src="{{ asset('images/cta_background.jpg') }}" alt="Aladam Group Interior Project"> 
-            </div> --}}
         </div>
     </section>
 

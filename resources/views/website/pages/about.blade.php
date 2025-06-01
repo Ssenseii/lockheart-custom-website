@@ -29,7 +29,7 @@
                     <h2 class="home__about__tagline">Aladam Group en Quelques Mots</h2>
                     <p class="home__about__subtitle">Expertise et Passion Réunies</p>
                     <div class="home__about__image">
-                        <img src="{{ asset('images/about__overview.jpg') }}" alt="Équipe Aladam Group">
+                        <img src="{{ asset('images/home__about.webp') }}" alt="Équipe Aladam Group">
                     </div>
                     <p class="home__about__description">
                         Fondé avec la vision de redéfinir les standards de l'aménagement intérieur au Maroc, Aladam Group
@@ -87,7 +87,7 @@
                     <h2 class="home__about__tagline">Une Croissance Marquée Par L'Innovation</h2>
                     <p class="home__about__subtitle">De 2018 à Aujourd'hui</p>
                     <div class="home__about__image">
-                        <img src="{{ asset('images/about__history.jpg') }}" alt="Évolution d'Aladam Group">
+                        <img src="{{ asset('images/about__history.webp') }}" alt="Évolution d'Aladam Group">
                     </div>
                     <p class="home__about__description">
                         Depuis notre création en 2018, nous avons constamment repoussé les limites de l'aménagement
@@ -161,7 +161,7 @@
                 <div class="dna-grid">
                     <!-- Left Column: Image with Hover Effect -->
                     <div class="dna-image-wrapper">
-                        <img src="{{ asset('images/about__values.jpeg') }}" alt="Valeurs Aladam Group" class="dna-image">
+                        <img src="{{ asset('images/about__values.web') }}" alt="Valeurs Aladam Group" class="dna-image">
                         <div class="image-overlay"></div>
                     </div>
 
@@ -225,7 +225,7 @@
                         </a>
                     </div>
                     <div class="about__catalogue__image">
-                        <img src="{{ asset('images/logo_aladam.png') }}" alt="Catalogue Aladam Group">
+                        <img src="{{ asset('images/logo_aladam.webp') }}" alt="Catalogue Aladam Group">
                     </div>
                 </div>
             </section>

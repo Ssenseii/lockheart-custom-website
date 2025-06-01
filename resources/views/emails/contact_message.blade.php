@@ -8,7 +8,7 @@
     <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
         <tr>
             <td align="center" style="padding: 20px 0;">
-                <img src="{{ asset('images/logo_aladam.png') }}" alt="Logo de l'entreprise" style="max-height: 80px;">
+                <img src="{{ asset('images/logo_aladam.webp') }}" alt="Logo de l'entreprise" style="max-height: 80px;">
             </td>
         </tr>
         <tr>

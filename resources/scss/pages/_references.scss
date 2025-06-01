@@ -11,12 +11,13 @@
         text-align: center;
         padding-top: 250px;
         padding-bottom: $space-6;
-        background: url("../../../public/images/headers/header-1.jpg")
+        background: url("../../../public/images/headers/header-1.webp")
             center/cover no-repeat;
-        // Animation properties
-        animation: drift-x 20s infinite alternate ease-in-out,
-            drift-y 20s infinite alternate ease-in-out;
+        background-position: center center;
+        animation: drift-x 10s infinite alternate ease-in-out,
+            drift-y 12s infinite alternate ease-in-out;
         overflow: hidden;
+        will-change: background-position;
     }
 
     &__tag {
@@ -150,8 +151,6 @@
                 font-size: 1.125rem;
                 line-height: 1.6;
                 color: $slate-gray-6;
-
-                
             }
         }
 

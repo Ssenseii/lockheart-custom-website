@@ -54,7 +54,7 @@
     <div class="header__bottom">
         <div class="header__left">
             <a class="header__bottom-logo" href="{{ route('home') }}">
-                <img src="{{ asset($settings->logo_path ?? 'images/logo_aladam.png') }}" alt="Logo">
+                <img src="{{ asset($settings->logo_path ?? 'images/logo_aladam.webp') }}" alt="Logo">
             </a>
         </div>
 

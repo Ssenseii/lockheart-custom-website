@@ -6,7 +6,7 @@
 // ======================
 .home__hero {
     min-height: 100dvh;
-    background: url("../../../public/images/hero-4.jpg") center/cover no-repeat;
+    background: url("../../../public/images/hero.webp") center/cover no-repeat;
     display: flex;
     flex-direction: row;
     align-items: flex-end;
@@ -21,7 +21,6 @@
         width: 100%;
         max-width: 960px;
         text-align: center;
-        
     }
 
     &-title {
@@ -97,7 +96,6 @@
             aspect-ratio: 4 / 3;
             overflow: hidden;
             border-radius: 0.75rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
 
             &:hover {
@@ -495,7 +493,6 @@
         border: $border-width-1 solid $brand-light;
         margin-bottom: $space-4;
         overflow: hidden;
-        box-shadow: $box-shadow-4;
 
         img {
             border-radius: $border-radius-3;
@@ -662,7 +659,7 @@
 // Services Section
 // ======================
 .home__services {
-    background: url("../../../public/images/headers/header-3.jpg") center/cover
+    background: url("../../../public/images/headers/header-3.webp") center/cover
         no-repeat;
     background-attachment: fixed;
     padding: $space-4 $space-2;
@@ -789,16 +786,13 @@
         width: 100%;
         border-radius: $border-radius-3;
         overflow: hidden;
-        box-shadow: $box-shadow-4;
-        transition: transform $duration-0 $easing-function-2,
-            box-shadow $duration-0 $easing-function-2;
+        transition: transform $duration-0 $easing-function-2;
         background: $brand-light;
         border: $border-width-1 solid $slate-gray-8;
         color: $brand-dark;
 
         &:hover {
             transform: translateY(-4px);
-            box-shadow: $box-shadow-2;
         }
 
         &--link {
@@ -957,7 +951,6 @@
         max-width: 600px;
         border-radius: $border-radius-4;
         overflow: hidden;
-        box-shadow: $box-shadow-4;
         order: -1; // Image first on mobile
 
         @media (min-width: 992px) {
@@ -1078,9 +1071,7 @@
         scroll-snap-align: start;
         border-radius: $border-radius-3;
         overflow: hidden;
-        box-shadow: $box-shadow-4;
-        transition: transform $duration-0 $easing-function-2,
-            box-shadow $duration-0 $easing-function-2;
+        transition: transform $duration-0 $easing-function-2;
         background: $brand-light;
         border: $border-width-1 solid $slate-gray-9;
 
@@ -1099,7 +1090,6 @@
 
         &:hover {
             transform: translateY(-5px);
-            box-shadow: $box-shadow-2;
         }
 
         &__content {
@@ -1295,9 +1285,7 @@
         background: $brand-light;
         border-radius: $border-radius-3;
         padding: $space-4;
-        box-shadow: $box-shadow-4;
-        transition: transform $duration-1 $easing-function-2,
-            box-shadow $duration-1 $easing-function-2;
+        transition: transform $duration-1 $easing-function-2;
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -1307,7 +1295,6 @@
 
         &:hover {
             transform: translateY(-8px);
-            box-shadow: $box-shadow-2;
             border-color: $brand-primary;
         }
 
@@ -1355,7 +1342,7 @@
 // ======================
 .home__cta {
     position: relative;
-    background: url("../../../public/images/home__cta.jpg") center/cover
+    background: url("../../../public/images/home__cta.webp") center/cover
         no-repeat;
     background-attachment: fixed;
     padding: $space-4 $space-2;
@@ -1500,13 +1487,11 @@
                 &--primary {
                     background-color: $brand-light;
                     color: $brand-dark;
-                    box-shadow: $box-shadow-3;
 
                     &:hover {
                         background-color: $blue-7;
                         color: $brand-light;
                         transform: translateY(-2px);
-                        box-shadow: $box-shadow-2;
                     }
                 }
 
@@ -1538,7 +1523,6 @@
         img {
             width: 100%;
             border-radius: $border-radius-4;
-            box-shadow: $box-shadow-2;
             transform: perspective(1000px) rotateY(-10deg);
             transition: transform $duration-1 ease;
 

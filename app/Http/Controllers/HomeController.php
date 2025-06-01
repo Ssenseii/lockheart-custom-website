@@ -13,10 +13,15 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $references = Reference::latest()->get(); 
-        $services = Service::latest()->take(2)->get(); 
+
+        $references = Reference::where('is_published', true)
+            ->whereNotNull('company_logo')
+            ->latest()
+            ->paginate(24);
+
+        $services = Service::latest()->take(2)->get();
         $products = Product::latest()->take(3)->get();
-        
+
         return view('website.pages.home', compact(['services', 'products', 'references']));
     }
 }

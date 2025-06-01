@@ -111,28 +111,27 @@
     }
 }
 
-// Horizontal drift
 @keyframes drift-x {
     0% {
         background-position-x: 50%;
     }
     100% {
-        background-position-x: 53%;
+        background-position-x: 55%;
     }
 }
 
-// Vertical drift
 @keyframes drift-y {
     0% {
         background-position-y: 50%;
     }
     100% {
-        background-position-y: 53%;
+        background-position-y: 95%;
     }
 }
 
 @keyframes shadowBreath {
-    0%, 100% {
+    0%,
+    100% {
         box-shadow: 0 0 0 0 rgba($brand-primary, 0.4);
         transform: scale(1);
     }
