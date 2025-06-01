@@ -6,6 +6,7 @@ use App\Filament\Resources\SettingResource\Pages;
 use App\Filament\Resources\SettingResource\RelationManagers;
 use App\Models\Setting;
 use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -55,6 +56,20 @@ class SettingResource extends Resource
                                     ->columns(2),
                             ]),
 
+                        Forms\Components\Tabs\Tab::make('Catalogue')
+                            ->schema([
+                                FileUpload::make('catalogue_pdf')
+                                    ->label('Catalogue PDF')
+                                    ->acceptedFileTypes(['application/pdf'])
+                                    ->directory('settings')
+                                    ->preserveFilenames()
+                                    ->getUploadedFileNameForStorageUsing(
+                                        fn(TemporaryUploadedFile $file): string => 'catalogue-' . $file->getClientOriginalName()
+                                    )
+                                    ->openable()
+                                    ->downloadable()
+                                    ->columnSpanFull(),
+                            ]),
                         Forms\Components\Tabs\Tab::make('Contact Information')
                             ->schema([
                                 Forms\Components\Section::make('Email Addresses')
@@ -149,6 +164,7 @@ class SettingResource extends Resource
                                     ])
                                     ->columns(2),
                             ]),
+
 
                         Forms\Components\Tabs\Tab::make('SEO')
                             ->schema([

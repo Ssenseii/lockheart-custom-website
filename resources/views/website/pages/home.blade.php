@@ -8,17 +8,11 @@
     <section class="home__hero">
         <div class="home__hero-column">
             <div class="home__hero-socials">
-                <a href="#">
+                <a href="https://www.linkedin.com/{{ $settings->social_linkedin }}">
                     <img src="{{ asset('images/social-media/linkedin.svg') }}" alt="">
                 </a>
-                <a href="#">
+                <a href="https://www.facebook.com/{{ $settings->social_facebook }}">
                     <img src="{{ asset('images/social-media/facebook.svg') }}" alt="">
-                </a>
-                <a href="#">
-                    <img src="{{ asset('images/social-media/instagram.svg') }}" alt="">
-                </a>
-                <a href="#">
-                    <img src="{{ asset('images/social-media/tiktok.svg') }}" alt="">
                 </a>
             </div>
             <p class="home__hero-paragraph">Aladam Group transforme vos espaces commerciaux et résidentiels avec des designs
@@ -30,15 +24,15 @@
         </div>
         <div class="home__hero-column">
             <h1 class="home__hero-title">Spécialiste en Aménagement Professionelle</h1>
-            <button class="button button--primary">Demandez un Devis</button>
+            <a href="{{ route('contact') }}" class="button button--primary">Demandez un Devis</a>
             <div class="home__hero-services">
-                <a class="{{ route('services') }}">
+                <a href="{{ route('services') }}">
                     <img src="{{ asset('images/hero_services/hero_serv1.jpg') }}" alt="">
                 </a>
-                <a class="{{ route('services') }}">
+                <a href="{{ route('services') }}">
                     <img src="{{ asset('images/hero_services/hero_serv2.jpg') }}" alt="">
                 </a>
-                <a class="{{ route('services') }}">
+                <a href="{{ route('services') }}">
                     <img src="{{ asset('images/hero_services/hero_serv3.jpg') }}" alt="">
                 </a>
             </div>
@@ -142,7 +136,8 @@
                     <p class="home__about__credo-text">"Un espace bien conçu doit vous ressembler, pas à nos précédents
                         projets."
                     </p>
-                    <a href="#" class="button button--primary">Découvrez Notre Philosophie en Action →</a>
+                    <a href="{{ route('about') }}" class="button button--primary">Découvrez Notre Philosophie en Action
+                        →</a>
                 </div>
             </div>
         </div>
@@ -161,8 +156,8 @@
                     est pensé, chaque projet est unique.
                 </p>
                 <div class="home__services-buttons">
-                    <a href="#" class="button button--primary">Explorer nos services</a>
-                    <a href="#" class="button button--outline">Contactez-nous</a>
+                    <a href="{{ route('services') }}" class="button button--primary">Explorer nos services</a>
+                    <a href="{{ route('contact') }}" class="button button--outline">Contactez-nous</a>
                 </div>
             </div>
 
@@ -232,8 +227,8 @@
                         surprendre.
                     </p>
                     <div class="home__products-buttons">
-                        <a href="#" class="button button--primary">Découvrir nos produits</a>
-                        <a href="#" class="button button--outline">Demander un devis</a>
+                        <a href="{{ route('products') }}" class="button button--primary">Découvrir nos produits</a>
+                        <a href="{{ route('contact') }}" class="button button--outline">Demander un devis</a>
                     </div>
                 </div>
 
@@ -273,7 +268,7 @@
 
                                 <!-- Title -->
                                 <h2 class="text-lg font-semibold text-gray-800 mb-2">
-                                    <a href="#" class="hover:text-blue-600">
+                                    <a href="{{ route('product.show', $product->slug) }}" class="hover:text-blue-600">
                                         {{ $product->name }}
                                     </a>
                                 </h2>
@@ -286,7 +281,7 @@
                                 @endif
 
                                 <div class="mt-auto pt-2">
-                                    <a href="#"
+                                    <a href="{{ route('product.show', $product->slug) }}"
                                         class="block w-full bg-gray-100 hover:bg-blue-500 text-gray-800 hover:text-gray-100 text-center text-sm font-medium py-2 px-4 rounded transition-colors duration-200">
                                         Voir plus
                                     </a>

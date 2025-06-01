@@ -1,7 +1,8 @@
 <footer class="footer">
     <div class="footer__container">
         <div class="footer__row">
-            <img src="{{ asset('images/logo_aladam.png') }}" alt="Logo {{ config('site.name') }}" class=" h-16">
+            <img src="{{ asset($settings->logo_path ?? 'images/logo_aladam.png') }}" alt="Logo {{ config('site.name') }}"
+                class=" h-16">
         </div>
         <div class="footer__row">
             <div class="footer__col footer__col--brand">
@@ -78,15 +79,6 @@
             <div class="footer__col footer__col--legal">
                 <ul class="footer__legal-menu">
                     <li class="footer__legal-item">
-                        <a href="#" class="footer__legal-link">Politique de confidentialité</a>
-                    </li>
-                    <li class="footer__legal-item">
-                        <a href="#" class="footer__legal-link">Conditions d'utilisation</a>
-                    </li>
-                    <li class="footer__legal-item">
-                        <a href="#" class="footer__legal-link">Politique relative aux cookies</a>
-                    </li>
-                    <li class="footer__legal-item">
                         <span class="footer__copyright">© 2025 Aladam Group</span>
                     </li>
                 </ul>
@@ -96,7 +88,8 @@
         <div class="footer__row">
             <div class="footer__col">
                 <p class="footer__disclaimer">
-                    Powered by <a href="https://www.lockheart.org" target="_blank" rel="noreferrer" class="footer__disclaimer-link">Lockheart Labworks</a>.
+                    Powered by <a href="https://www.lockheart.org" target="_blank" rel="noreferrer"
+                        class="footer__disclaimer-link">Lockheart Labworks</a>.
                 </p>
             </div>
         </div>

@@ -6,17 +6,17 @@
 
 @section('content')
 
-@if (session('success'))
-<div class="p-4 bg-green-100 text-green-700 rounded text-center">
-    {{ session('success') }}
-</div>
-@endif
+    @if (session('success'))
+        <div class="p-4 bg-green-100 text-green-700 rounded text-center">
+            {{ session('success') }}
+        </div>
+    @endif
 
-@if (session('error'))
-<div class=" p-4 bg-red-100 text-red-700 text-center rounded">
-    {{ session('error') }}
-</div>
-@endif
+    @if (session('error'))
+        <div class=" p-4 bg-red-100 text-red-700 text-center rounded">
+            {{ session('error') }}
+        </div>
+    @endif
     <main class="contact contact_page">
         <!-- Header Section -->
         <header class="contact__header">
@@ -28,8 +28,8 @@
             <p class="contact__description">Notre équipe est disponible pour répondre à toutes vos questions et vous
                 accompagner dans vos projets.</p>
             <div class="contact__buttons">
-                <a href="#" class="contact__button contact__button--products">Nos produits</a>
-                <a href="#" class="contact__button contact__button--services">Nos services</a>
+                <a href="{{ route('products') }}" class="contact__button contact__button--products">Nos produits</a>
+                <a href="{{ route('services') }}" class="contact__button contact__button--services">Nos services</a>
             </div>
         </header>
 
@@ -71,7 +71,7 @@
                         <textarea id="message" name="message" class="contact__form-textarea" placeholder="Votre message..." required></textarea>
                     </div>
 
-                 
+
                     <button type="submit" class="contact__form-submit">Envoyer le message</button>
                 </form>
 
@@ -91,7 +91,9 @@
                             Localisation
                         </h3>
                         <div class="contact__info-content">
-                            <p class="contact__info-text">123 Rue de l'Exemple, 75000 Paris, France</p>
+                            <p class="contact__info-text">
+                                {{$settings->contact_address_1 }}
+                            </p>
                         </div>
                     </div>
 
@@ -111,7 +113,7 @@
                             Téléphone
                         </h3>
                         <div class="contact__info-content">
-                            <a href="tel:+33123456789" class="contact__info-contact">
+                            <a href="tel:{{ $settings->contact_phone_2 }}" class="contact__info-contact">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round"
@@ -128,9 +130,10 @@
                                     <path d="M9 17v.01" />
                                     <path d="M6 17v.01" />
                                 </svg>
-                                +33 1 23 45 67 89
+                                {{ $settings->contact_phone_2 }}
+
                             </a>
-                            <a href="tel:+33612345678" class="contact__info-contact">
+                            <a href="tel:{{ $settings->contact_phone_1 }}" class="contact__info-contact">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round"
@@ -141,7 +144,7 @@
                                     <path d="M11 4h2" />
                                     <path d="M12 17v.01" />
                                 </svg>
-                                +33 6 12 34 56 78
+                                {{ $settings->contact_phone_1 }}
                             </a>
                         </div>
                     </div>
@@ -159,7 +162,7 @@
                             Email
                         </h3>
                         <div class="contact__info-content">
-                            <a href="mailto:contact@entreprise.com" class="contact__info-contact">
+                            <a href="mailto:{{ $settings->email_main }}" class="contact__info-contact">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round"
@@ -169,9 +172,23 @@
                                         d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
                                     <path d="M3 7l9 6l9 -6" />
                                 </svg>
-                                contact@entreprise.com
+                                {{ $settings->email_main }}
                             </a>
-                            <a href="mailto:support@entreprise.com" class="contact__info-contact">
+
+                            <a href="mailto:{{ $settings->email_info }}" class="contact__info-contact">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-mail">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path
+                                        d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
+                                    <path d="M3 7l9 6l9 -6" />
+                                </svg>
+                                {{ $settings->email_info }}
+
+                            </a>
+                            <a href="mailto:{{ $settings->email_support }}" class="contact__info-contact">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round"
@@ -181,7 +198,8 @@
                                     <path d="M12 16v.01" />
                                     <path d="M12 13a2 2 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483" />
                                 </svg>
-                                support@entreprise.com
+                                {{ $settings->email_support }}
+
                             </a>
                         </div>
                     </div>
@@ -203,7 +221,7 @@
                             Réseaux sociaux
                         </h3>
                         <div class="contact__social">
-                            <a href="#" class="contact__social-link">
+                            <a href="https://www.facebook.com/{{ $settings->social_facebook }}" target="_blank" rel="noreferrer" class="contact__social-link">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round"
@@ -213,7 +231,8 @@
                                 </svg>
                                 Facebook
                             </a>
-                            <a href="#" class="contact__social-link">
+
+                            <a href="https://www.linkedin.com/{{ $settings->social_linkedin }}" target="_blank" rel="noreferrer" class="contact__social-link">                            
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round"
@@ -226,30 +245,6 @@
                                     <path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" />
                                 </svg>
                                 LinkedIn
-                            </a>
-                            <a href="#" class="contact__social-link">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round"
-                                    class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
-                                    <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
-                                    <path d="M16.5 7.5v.01" />
-                                </svg>
-                                Instagram
-                            </a>
-                            <a href="#" class="contact__social-link">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round"
-                                    class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
-                                    <path
-                                        d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
-                                </svg>
-                                WhatsApp
                             </a>
                         </div>
                     </div>

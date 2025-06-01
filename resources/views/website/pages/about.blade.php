@@ -17,7 +17,7 @@
                 traditionnel et innovation technique.
             </p>
             <div class="about__buttons">
-                <a href="#" class="about__button about__button--primary">Contactez-Nous</a>
+                <a href="{{ route('contact') }}" class="about__button about__button--primary">Contactez-Nous</a>
             </div>
         </header>
 
@@ -91,7 +91,8 @@
                     </div>
                     <p class="home__about__description">
                         Depuis notre création en 2018, nous avons constamment repoussé les limites de l'aménagement
-                        particulière et professionelle au Maroc, accumulant des réalisations prestigieuses et développant des partenariats
+                        particulière et professionelle au Maroc, accumulant des réalisations prestigieuses et développant
+                        des partenariats
                         stratégiques.
                     </p>
 
@@ -210,22 +211,25 @@
         </section>
 
         <!-- Catalogue Banner -->
-        <section class="about__catalogue">
-            <div class="about__catalogue__container">
-                <div class="about__catalogue__content">
-                    <h2 class="about__catalogue__title">Téléchargez Notre Catalogue Complet</h2>
-                    <p class="about__catalogue__description">
-                        Découvrez l'étendue de nos solutions d'aménagement intérieur dans notre catalogue 2023.
-                    </p>
-                    <a href="{{ asset('pdf/catalogue-aladam-2023.pdf') }}" class="button button--primary" style="width: fit-content;" download>
-                        Télécharger le PDF →
-                    </a>
+        @if ($settings->catalogue_pdf)
+            <section class="about__catalogue">
+                <div class="about__catalogue__container">
+                    <div class="about__catalogue__content">
+                        <h2 class="about__catalogue__title">Téléchargez Notre Catalogue Complet</h2>
+                        <p class="about__catalogue__description">
+                            Découvrez l'étendue de nos solutions d'aménagement intérieur dans notre catalogue 2023.
+                        </p>
+                        <a href="{{ Storage::url($settings->catalogue_pdf) }}" target="_blank"
+                            class="button button--primary" style="width: fit-content;" download>
+                            Télécharger le PDF →
+                        </a>
+                    </div>
+                    <div class="about__catalogue__image">
+                        <img src="{{ asset('images/logo_aladam.png') }}" alt="Catalogue Aladam Group">
+                    </div>
                 </div>
-                <div class="about__catalogue__image">
-                    <img src="{{ asset('images/logo_aladam.png') }}" alt="Catalogue Aladam Group">
-                </div>
-            </div>
-        </section>
+            </section>
+        @endif
 
         <!-- CTA Section -->
         <section class="about__cta">
@@ -237,9 +241,6 @@
                 </p>
                 <div class="about__cta__buttons">
                     <a href="{{ route('contact') }}" class="button button--primary">Contactez-Nous</a>
-                    {{-- <a href="tel:+212522000000" class="button button--secondary">
-                        <span class="icon-phone"></span> +212 522 000 000
-                    </a> --}}
                 </div>
             </div>
         </section>

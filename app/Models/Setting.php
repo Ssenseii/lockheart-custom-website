@@ -12,6 +12,7 @@ class Setting extends Model
 
     protected $fillable = [
         'logo_path',
+        'catalogue_pdf',
 
         'email_main',
         'email_support',

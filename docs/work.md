@@ -30,14 +30,14 @@
 # Functionality
 
 [X] - Contact Forms
-[] - All Functional Links
-[] - All Functional Buttons
-[] - Settings Page Connect to Backend
-[] - Correct Contacts
+[X] - All Functional Links
+[X] - All Functional Buttons
+[X] - Settings Page Connect to Backend
+[X] - Correct Contacts
 
 # Database
 
-[] - Migrate to MYSQL
+[X] - Migrate to MYSQL
 [] - Add Products
 [] - Modify Services
 

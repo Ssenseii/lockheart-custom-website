@@ -41,7 +41,8 @@
                                         <path d="M5 12h14M12 5l7 7-7 7" />
                                     </svg>
                                 </a>
-                                <a href="/contact" class="service-section__button service-section__button--primary">
+                                <a href="{{ route('contact') }}"
+                                    class="service-section__button service-section__button--primary">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                         stroke-linecap="round" stroke-linejoin="round"
@@ -69,7 +70,7 @@
                     Nos experts sont à votre disposition pour discuter de votre projet et vous proposer des solutions sur
                     mesure.
                 </p>
-                <a href="/contact" class="services__cta-button">
+                <a href="{{ route('contact') }}" class="services__cta-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="icon icon-tabler icons-tabler-outline icon-tabler-phone-ringing">

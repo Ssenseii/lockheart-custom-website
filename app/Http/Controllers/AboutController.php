@@ -10,7 +10,7 @@ class AboutController extends Controller
     public function index()
     {
         $about = About::latest()->get();
-
-        return view('website.pages.about', compact(['about']));
+        $settings = cache()->get('site_settings');
+        return view('website.pages.about', compact(['about', 'settings']));
     }
 }
