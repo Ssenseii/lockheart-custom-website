@@ -3,7 +3,7 @@
 @section('title', 'Nos Références – Clients et Projets Aladam Groupe')
 @section('meta_description', 'Découvrez nos références clients : entreprises, commerces et particuliers qui nous ont
     fait confiance pour leurs projets d’aménagement à Casablanca.')
-@section('meta_keywords', 'références clients Aladam, projets aménagement Casablanca, partenaires design intérieur,
+@section('meta_keywords', 'références clients Aladam, projets aménagement Casablanca, partenaires design intérieur et extérieur,
     clients agencement Maroc')
 
 @section('content')

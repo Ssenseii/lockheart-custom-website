@@ -61,16 +61,17 @@
 
 # Notes
 
-[] - Add the Missing Logo in the references
-[] - Interior and Exterior
-[] - More Notes...
+[X] - Add the Missing Logo in the references
+[X] - Interior and Exterior
+[] - Remove ISO and add real stuff
+[] - Real Service Images
+[] - Alma Logo
 
 # Final Delivery
 
-[] - Switch ENV to theirs
+[X] - Switch ENV to theirs
 [X] - npm run build
-[] - Create a new Branch in Git 
-[] - Change Everything to ALADAM GROUP
+[X] - Change Everything to ALADAM GROUP
 [] - Switch Emails
 [] - Add Passwords
 [] - Fix env and htaccess for the cPanel

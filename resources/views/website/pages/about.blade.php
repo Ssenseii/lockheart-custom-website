@@ -2,7 +2,7 @@
 
 @section('title', 'À Propos de Nous – Aladam Groupe Casablanca')
 @section('meta_description', 'Aladam Groupe est votre partenaire en aménagement et agencement à Casablanca. Découvrez notre histoire, nos valeurs et notre engagement envers la qualité.')
-@section('meta_keywords', 'Aladam Groupe Casablanca, entreprise aménagement Maroc, à propos Aladam, agencement professionnel, design intérieur')
+@section('meta_keywords', 'Aladam Groupe Casablanca, entreprise aménagement Maroc, à propos Aladam, agencement professionnel, design intérieur, design extérieur')
 
 @section('content')
     <main class="about">
@@ -32,7 +32,7 @@
                         <img loading="lazy"src="{{ asset('images/home__about.webp') }}" alt="Équipe Aladam Group">
                     </div>
                     <p class="home__about__description">
-                        Fondé avec la vision de redéfinir les standards de l'aménagement intérieur au Maroc, Aladam Group
+                        Fondé avec la vision de redéfinir les standards de l'aménagementinterieurau Maroc, Aladam Group
                         s'est imposé comme un acteur clé dans les domaines des cloisons, faux plafonds, et solutions
                         acoustiques. Notre équipe pluridisciplinaire combine ingénieurs, designers et artisans pour offrir
                         des solutions sur mesure.
@@ -191,7 +191,7 @@
                                 </div>
                                 <h3 class="card-title">Notre Vision</h3>
                                 <p class="card-text">
-                                    Devenir le référent en aménagement intérieur en Afrique du Nord d'ici 2030.
+                                    Devenir le référent en aménagement interieur et extérieur en Afrique du Nord d'ici 2030.
                                 </p>
                             </div>
 
@@ -218,7 +218,7 @@
                     <div class="about__catalogue__content">
                         <h2 class="about__catalogue__title">Téléchargez Notre Catalogue Complet</h2>
                         <p class="about__catalogue__description">
-                            Découvrez l'étendue de nos solutions d'aménagement intérieur dans notre catalogue 2023.
+                            Découvrez l'étendue de nos solutions d'aménagement intérieur et extérieur dans notre catalogue 2023.
                         </p>
                         <a href="{{ Storage::url($settings->catalogue_pdf) }}" target="_blank"
                             class="button button--primary" style="width: fit-content;" download>

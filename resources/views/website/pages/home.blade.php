@@ -2,7 +2,7 @@
 
 @section('title', 'Aménagement Professionnel et Particulier à Casablanca')
 @section('meta_description', 'Aménagement de magasins, bureaux, restaurants et maisons à Casablanca. Aladam Groupe transforme vos idées en espaces uniques.')
-@section('meta_keywords', 'aménagement Casablanca, agencement professionnel Maroc, design intérieur boutique, rénovation bureau, Aladam Groupe')
+@section('meta_keywords', 'aménagement Casablanca, agencement professionnel Maroc, design intérieur et extérieur boutique, rénovation bureau, Aladam Groupe')
 
 
 @section('content')

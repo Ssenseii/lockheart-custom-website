@@ -28,7 +28,7 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->brandName('Aladam Group')
-            ->favicon(asset('images/logo_aladam.png'))
+            ->favicon(asset('favicon/favicon-16x16.png'))
             ->colors([
                 'primary' => Color::Blue,
             ])

@@ -73,6 +73,10 @@
         max-width: 1400px;
         margin: 0 auto;
         padding: $space-6 $space-4;
+
+        @media (max-width: 768px) {
+            padding: $space-4 $space-2;
+        }
     }
 }
 

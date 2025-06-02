@@ -3,7 +3,7 @@
 @section('title', 'Nos Services - Aménagement Professionnel et Particulier à Casablanca')
 @section('meta_description', 'Découvrez nos services d’aménagement pour commerces, bureaux, maisons et restaurants à
     Casablanca.')
-@section('meta_keywords', 'services aménagement Casablanca, agencement professionnel, design intérieur, Aladam Groupe')
+@section('meta_keywords', 'services aménagement Casablanca, agencement professionnel, design intérieur et extérieur, Aladam Groupe')
 
 @section('content')
 

@@ -1,8 +1,12 @@
 @extends('website.layouts.app')
 
-@section('title', 'Nos Services – Aménagement Intérieur et Agencement à Casablanca')
-@section('meta_description', 'Aladam Groupe propose des services d’aménagement sur mesure pour professionnels et particuliers à Casablanca. Design, rénovation, agencement clé en main.')
-@section('meta_keywords', 'services aménagement Casablanca, rénovation intérieur Maroc, design espaces professionnels, agencement sur mesure, Aladam Groupe')
+@section('title', 'Nos Services - Aménagement intérieur et extérieur et Agencement à Casablanca')
+@section('meta_description',
+    'Aladam Groupe propose des services d\'aménagement sur mesure pour professionnels et
+    particuliers à Casablanca. Design, rénovation, agencement clé en main.')
+@section('meta_keywords',
+    'services aménagement Casablanca, rénovation intérieur et extérieur Maroc, design espaces
+    professionnels, agencement sur mesure, Aladam Groupe')
 
 @section('content')
     <main class="services">
