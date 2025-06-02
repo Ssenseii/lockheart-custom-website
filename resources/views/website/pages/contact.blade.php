@@ -1,7 +1,8 @@
 @extends('website.layouts.app')
 
 @section('title', 'Nos Services - Aménagement Professionnel et Particulier à Casablanca')
-@section('meta_description', 'Découvrez nos services d’aménagement pour commerces, bureaux, maisons et restaurants à Casablanca.')
+@section('meta_description', 'Découvrez nos services d’aménagement pour commerces, bureaux, maisons et restaurants à
+    Casablanca.')
 @section('meta_keywords', 'services aménagement Casablanca, agencement professionnel, design intérieur, Aladam Groupe')
 
 @section('content')
@@ -25,7 +26,8 @@
             </span>
 
             <h1 class="contact__title">Nous sommes là pour vous aider</h1>
-            <p class="contact__description">Aladam Groupe propose des solutions complètes d’aménagement professionnel et particulier à Casablanca.
+            <p class="contact__description">Aladam Groupe propose des solutions complètes d’aménagement professionnel et
+                particulier à Casablanca.
                 Notre équipe est spécialisée dans la conception, l’agencement et la rénovation de tous types d'espaces.</p>
             <div class="contact__buttons">
                 <a href="{{ route('products') }}" class="contact__button contact__button--products">Nos produits</a>
@@ -92,7 +94,7 @@
                         </h3>
                         <div class="contact__info-content">
                             <p class="contact__info-text">
-                                {{$settings->contact_address_1 }}
+                                {{ $settings->contact_address_1 }}
                             </p>
                         </div>
                     </div>
@@ -221,7 +223,8 @@
                             Réseaux sociaux
                         </h3>
                         <div class="contact__social">
-                            <a href="https://www.facebook.com/{{ $settings->social_facebook }}" target="_blank" rel="noreferrer" class="contact__social-link">
+                            <a href="https://www.facebook.com/{{ $settings->social_facebook }}" target="_blank"
+                                rel="noreferrer" class="contact__social-link">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round"
@@ -232,7 +235,8 @@
                                 Facebook
                             </a>
 
-                            <a href="https://www.linkedin.com/{{ $settings->social_linkedin }}" target="_blank" rel="noreferrer" class="contact__social-link">                            
+                            <a href="https://www.linkedin.com/{{ $settings->social_linkedin }}" target="_blank"
+                                rel="noreferrer" class="contact__social-link">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round"
@@ -254,9 +258,11 @@
 
         <!-- Map Section -->
         <section class="contact__map">
+
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9916256937586!2d2.292292615509614!3d48.85837007928746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sTour%20Eiffel!5e0!3m2!1sfr!2sfr!4v1623251234567!5m2!1sfr!2sfr"
-                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3324.083407523675!2d-7.6259241!3d33.5771836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7d38ba1b64e47%3A0x7fae538f969a5082!2sAladam%20Group!5e0!3m2!1sen!2sma!4v1748898127598!5m2!1sen!2sma"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
 
         <!-- FAQ Section -->

@@ -70,6 +70,9 @@
         @yield('content')
     </main>
 
+    {{-- Floating Whatsapp --}}
+    @include('website.layouts.partials.whatsapp-button')
+    
     <!-- Footer -->
     @include('website.layouts.partials.footer')
 

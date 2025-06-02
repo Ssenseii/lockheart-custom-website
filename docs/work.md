@@ -52,17 +52,18 @@
 
 # Improvements
 
-[] - Whatsapp Floating Button
+[X] - Whatsapp Floating Button
 [] - Unified Button Look
 [X] - Different Header BG
-[] - Correct French Text
+[X] - Correct French Text
 [] - Fix the contrast ratios
-[] - Add a gallery
+[X] - Map
 
 # Notes
 
 [] - Add the Missing Logo in the references
 [] - Interior and Exterior
+[] - More Notes...
 
 # Final Delivery
 
