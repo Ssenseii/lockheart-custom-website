@@ -13,8 +13,12 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     animation: pulse-whatsapp 2s infinite;
 
+    @media screen and (max-width: 768px) {
+        bottom: 5rem;
+    }
+
     svg {
-        stroke: #fff;
+        stroke: transparent;
         fill: #fff;
         width: 30px;
         height: 30px;

@@ -24,7 +24,7 @@
             </a>
         </div>
         <div class="home__hero-column">
-            <h1 class="home__hero-title">Spécialiste en Aménagement Professionelle</h1>
+            <h1 class="home__hero-title">Aménagement Professionnel et Particulier à Casablanca</h1>
             <a href="{{ route('contact') }}" class="button button--primary">Demandez un Devis</a>
             <div class="home__hero-services">
                 <a href="{{ route('services') }}">
